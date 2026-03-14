@@ -1,1034 +1,1356 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUMIK · Equipo Audiovisual Profesional · Mérida Norte</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink:      #0B0F14;
-    --ink2:     #141A22;
-    --ink3:     #1C2530;
-    --gold:     #C8A96E;
-    --gold2:    #A8853E;
-    --gold-lt:  #F0E4C8;
-    --silver:   #8A96A8;
-    --fog:      #F2F0EC;
-    --fog2:     #E8E4DC;
-    --white:    #FFFFFF;
-    --green:    #1D4A38;
-    --green2:   #265C48;
-    --green-lt: #D8EDE6;
-    --r:  10px;
-    --r2: 18px;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumik — Renta de Experiencias Audiovisuales · Mérida, Yucatán</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─────────────────────────────────────────
+       ROOT TOKENS
+    ───────────────────────────────────────── */
+    :root {
+      --fam-primary: #1a0533;
+      --fam-accent:  #f5c518;
+      --fam-warm:    #ff6b35;
+      --fam-light:   #fff8f0;
+      --fam-muted:   #8b6e5a;
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Outfit', sans-serif;
-    background: var(--fog);
-    color: var(--ink);
-    overflow-x: hidden;
-  }
+      --corp-primary: #0d1b2a;
+      --corp-accent:  #00c2cb;
+      --corp-silver:  #c9d6e3;
+      --corp-light:   #f0f4f8;
+      --corp-muted:   #5a7a96;
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(11,15,20,0.96);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(200,169,110,0.15);
-  }
-  .nav-inner {
-    max-width: 1120px; margin: 0 auto; padding: 0 28px;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 66px;
-  }
-  .logo {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 900; font-size: 24px;
-    letter-spacing: -.04em; color: var(--white);
-  }
-  .logo span { color: var(--gold); }
-  .logo sub {
-    font-size: 9px; font-weight: 400; letter-spacing: .2em;
-    color: var(--silver); vertical-align: middle;
-    margin-left: 6px; text-transform: uppercase;
-  }
-  .nav-links { display: flex; gap: 36px; }
-  .nav-links a {
-    font-size: 14px; font-weight: 400;
-    color: rgba(255,255,255,.5); text-decoration: none;
-    transition: color .2s; letter-spacing: .01em;
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-cta {
-    background: transparent;
-    border: 1.5px solid var(--gold);
-    color: var(--gold); font-weight: 600; font-size: 13px;
-    padding: 9px 22px; border-radius: 6px;
-    text-decoration: none; letter-spacing: .04em; text-transform: uppercase;
-    transition: background .2s, color .2s;
-  }
-  .nav-cta:hover { background: var(--gold); color: var(--ink); }
+      --neutral-white: #ffffff;
+      --neutral-dark:  #111111;
+      --radius-lg: 20px;
+      --radius-xl: 32px;
+      --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: var(--ink);
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 130px 28px 90px;
-    position: relative; overflow: hidden;
-  }
-  .hero-noise {
-    position: absolute; inset: 0; opacity: .035;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 256px;
-  }
-  .hero-line {
-    position: absolute; top: 0; bottom: 0;
-    width: 1px; background: rgba(200,169,110,.08);
-  }
-  .hero-line:nth-child(2) { left: 20%; }
-  .hero-line:nth-child(3) { left: 50%; }
-  .hero-line:nth-child(4) { left: 80%; }
-  .hero-glow {
-    position: absolute;
-    width: 700px; height: 500px;
-    background: radial-gradient(ellipse, rgba(200,169,110,.10) 0%, transparent 65%);
-    top: -80px; right: -120px; pointer-events: none;
-  }
-  .hero-content { position: relative; max-width: 1120px; margin: 0 auto; width: 100%; }
-  .hero-kicker {
-    display: flex; align-items: center; gap: 14px;
-    margin-bottom: 32px;
-  }
-  .hero-kicker-line { width: 40px; height: 1px; background: var(--gold); }
-  .hero-kicker span {
-    font-size: 11px; font-weight: 600; letter-spacing: .22em;
-    text-transform: uppercase; color: var(--gold);
-  }
-  .hero h1 {
-    font-weight: 900; font-size: clamp(48px, 7.5vw, 96px);
-    line-height: .93; letter-spacing: -.04em;
-    color: var(--white); margin-bottom: 8px;
-  }
-  .hero h1 .outline {
-    -webkit-text-stroke: 1.5px var(--gold);
-    color: transparent;
-  }
-  .hero-sub {
-    font-size: 17px; font-weight: 300;
-    color: rgba(255,255,255,.45); max-width: 500px;
-    line-height: 1.7; margin: 28px 0 48px;
-    font-family: 'Lora', serif; font-style: italic;
-  }
-  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-  .btn-gold {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--gold); color: var(--ink);
-    font-weight: 700; font-size: 14px; letter-spacing: .03em;
-    padding: 16px 32px; border-radius: var(--r);
-    text-decoration: none;
-    transition: background .2s, transform .15s, box-shadow .2s;
-  }
-  .btn-gold:hover {
-    background: #d4b47a; transform: translateY(-2px);
-    box-shadow: 0 10px 36px rgba(200,169,110,.3);
-  }
-  .btn-outline-w {
-    display: inline-flex; align-items: center; gap: 8px;
-    color: rgba(255,255,255,.55); font-size: 14px;
-    text-decoration: none; transition: color .2s;
-    border-bottom: 1px solid rgba(255,255,255,.2);
-    padding-bottom: 2px;
-  }
-  .btn-outline-w:hover { color: var(--white); border-color: var(--white); }
-  .hero-divider {
-    margin-top: 80px; padding-top: 40px;
-    border-top: 1px solid rgba(255,255,255,.07);
-    display: flex; gap: 64px; flex-wrap: wrap;
-  }
-  .stat-val {
-    font-weight: 800; font-size: 38px; letter-spacing: -.04em;
-    color: var(--white); line-height: 1;
-  }
-  .stat-val em { color: var(--gold); font-style: normal; }
-  .stat-lbl { font-size: 12px; color: var(--silver); margin-top: 6px; letter-spacing: .04em; }
+    /* ─────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #0a0a0a;
+      color: var(--neutral-white);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button, input, select, textarea { font-family: inherit; }
 
-  /* ── SECTIONS ── */
-  section { padding: 100px 28px; }
-  .container { max-width: 1120px; margin: 0 auto; }
-  .sec-kicker {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-size: 10px; font-weight: 700; letter-spacing: .22em;
-    text-transform: uppercase; color: var(--gold2);
-    margin-bottom: 18px;
-  }
-  .sec-kicker::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold2); }
-  .sec-title {
-    font-weight: 800; font-size: clamp(30px, 4vw, 50px);
-    letter-spacing: -.035em; line-height: 1.04;
-  }
-  .sec-sub {
-    font-size: 16px; font-weight: 300; color: #6A7485;
-    margin-top: 14px; max-width: 520px; line-height: 1.7;
-    font-family: 'Lora', serif; font-style: italic;
-  }
+    /* ─────────────────────────────────────────
+       HERO SELECTOR (INTRO SCREEN)
+    ───────────────────────────────────────── */
+    #intro {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #0a0a0a;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    #intro.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 
-  /* ── SELECTOR ── */
-  #selector { background: var(--fog); }
-  .nichos-row {
-    display: grid; grid-template-columns: repeat(3,1fr);
-    gap: 16px; margin-bottom: 52px;
-  }
-  .nicho-btn {
-    padding: 28px 24px; border-radius: var(--r2);
-    border: 1.5px solid var(--fog2);
-    background: var(--white); cursor: pointer;
-    transition: all .25s; text-align: left;
-    position: relative; overflow: hidden;
-  }
-  .nicho-btn::after {
-    content: ''; position: absolute;
-    bottom: 0; left: 0; right: 0; height: 3px;
-    transform: scaleX(0); transform-origin: left;
-    transition: transform .3s;
-  }
-  .nicho-btn.ka::after { background: var(--gold); }
-  .nicho-btn.ci::after { background: var(--ink3); }
-  .nicho-btn.co::after { background: var(--green); }
-  .nicho-btn:hover, .nicho-btn.active { border-color: transparent; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
-  .nicho-btn:hover::after, .nicho-btn.active::after { transform: scaleX(1); }
-  .nicho-btn.active { transform: translateY(-3px); }
-  .nicho-ico { font-size: 36px; margin-bottom: 14px; display: block; }
-  .nicho-label {
-    font-weight: 700; font-size: 16px; color: var(--ink);
-    margin-bottom: 6px; letter-spacing: -.01em;
-  }
-  .nicho-hint { font-size: 13px; color: var(--silver); line-height: 1.5; }
-  .nicho-badge {
-    position: absolute; top: 14px; right: 14px;
-    font-size: 10px; font-weight: 700; letter-spacing: .1em;
-    text-transform: uppercase; padding: 3px 10px; border-radius: 100px;
-  }
-  .nicho-btn.ka .nicho-badge { background: #F8F0DF; color: var(--gold2); }
-  .nicho-btn.ci .nicho-badge { background: #E8EBF0; color: var(--ink3); }
-  .nicho-btn.co .nicho-badge { background: var(--green-lt); color: var(--green); }
+    .intro-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      letter-spacing: -2px;
+      margin-bottom: 0.2em;
+      background: linear-gradient(135deg, #f5c518 0%, #ff6b35 50%, #00c2cb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .intro-tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: #aaa;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 3.5rem;
+    }
+    .intro-question {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      color: #ddd;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      padding: 0 1rem;
+    }
 
-  /* ── PANELES ── */
-  .panel { display: none; }
-  .panel.active { display: block; animation: fadeUp .3s ease; }
-  @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+    .selector-cards {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 1rem;
+    }
+    .selector-card {
+      cursor: pointer;
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2rem;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      border: 2px solid transparent;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .selector-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .selector-card:hover { transform: translateY(-6px); border-color: currentColor; }
+    .selector-card:hover::before { opacity: 0.08; }
 
-  .panel-bar {
-    display: flex; align-items: center; gap: 16px;
-    padding: 20px 0 24px; margin-bottom: 28px;
-    border-bottom: 1px solid var(--fog2);
-  }
-  .panel-ico { font-size: 28px; }
-  .panel-name { font-weight: 800; font-size: 24px; letter-spacing: -.03em; }
-  .panel-caption { font-size: 13px; color: var(--silver); margin-top: 2px; }
+    .selector-card.fam {
+      background: linear-gradient(145deg, rgba(245,197,24,0.12), rgba(255,107,53,0.08));
+      border-color: rgba(245,197,24,0.3);
+      color: var(--fam-accent);
+    }
+    .selector-card.fam::before { background: var(--fam-accent); }
+    .selector-card.fam:hover { border-color: var(--fam-accent); box-shadow: 0 20px 60px rgba(245,197,24,0.2); }
 
-  .pkgs { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px,1fr)); gap: 18px; }
-  .pkg {
-    background: var(--white); border-radius: var(--r2);
-    padding: 28px; display: flex; flex-direction: column;
-    border: 1.5px solid var(--fog2);
-    transition: transform .2s, box-shadow .2s;
-    position: relative;
-  }
-  .pkg:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,.08); }
-  .pkg.star { border-width: 2px; }
-  .pkg.star.ka  { border-color: var(--gold); }
-  .pkg.star.ci  { border-color: var(--ink3); }
-  .pkg.star.co  { border-color: var(--green); }
-  .star-badge {
-    position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
-    font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-    padding: 3px 14px; border-radius: 100px; white-space: nowrap;
-  }
-  .ka .star-badge  { background: var(--gold); color: var(--ink); }
-  .ci .star-badge  { background: var(--ink3); color: var(--white); }
-  .co .star-badge  { background: var(--green); color: var(--white); }
-  .pkg-name { font-weight: 700; font-size: 15px; color: var(--ink); }
-  .pkg-price {
-    font-weight: 900; font-size: 42px; letter-spacing: -.05em;
-    line-height: 1; margin: 12px 0 2px;
-  }
-  .ka .pkg-price { color: var(--gold2); }
-  .ci .pkg-price { color: var(--ink3); }
-  .co .pkg-price { color: var(--green); }
-  .pkg-dur { font-size: 12px; color: var(--silver); margin-bottom: 20px; }
-  .pkg-feats { flex: 1; list-style: none; margin-bottom: 22px; }
-  .pkg-feats li {
-    display: flex; align-items: flex-start; gap: 9px;
-    font-size: 13.5px; color: #4A5568; padding: 7px 0;
-    border-bottom: 1px solid #F0F2F5; line-height: 1.45;
-  }
-  .pkg-feats li:last-child { border: none; }
-  .pkg-feats li::before { content: '·'; font-weight: 900; font-size: 18px; flex-shrink:0; margin-top:-1px; }
-  .ka .pkg-feats li::before { color: var(--gold); }
-  .ci .pkg-feats li::before { color: var(--ink3); }
-  .co .pkg-feats li::before { color: var(--green); }
-  .btn-pkg {
-    display: flex; align-items: center; justify-content: center; gap: 9px;
-    width: 100%; padding: 13px; border-radius: var(--r);
-    font-weight: 600; font-size: 13.5px; letter-spacing: .02em;
-    text-decoration: none; border: none; cursor: pointer;
-    font-family: 'Outfit', sans-serif;
-    transition: opacity .2s, transform .15s;
-  }
-  .btn-pkg:hover { opacity: .88; transform: translateY(-1px); }
-  .ka .btn-pkg  { background: var(--gold); color: var(--ink); }
-  .ci .btn-pkg  { background: var(--ink3); color: var(--white); }
-  .co .btn-pkg  { background: var(--green); color: var(--white); }
+    .selector-card.corp {
+      background: linear-gradient(145deg, rgba(0,194,203,0.12), rgba(13,27,42,0.5));
+      border-color: rgba(0,194,203,0.3);
+      color: var(--corp-accent);
+    }
+    .selector-card.corp::before { background: var(--corp-accent); }
+    .selector-card.corp:hover { border-color: var(--corp-accent); box-shadow: 0 20px 60px rgba(0,194,203,0.2); }
 
-  /* ── FORMULARIO ── */
-  #formulario { background: var(--ink2); }
-  #formulario .sec-title { color: var(--white); }
-  #formulario .sec-sub   { color: rgba(255,255,255,.38); }
-  .form-wrap {
-    background: rgba(255,255,255,.03);
-    border: 1px solid rgba(200,169,110,.12);
-    border-radius: var(--r2); padding: 48px;
-    max-width: 740px; margin: 0 auto;
-  }
-  .form-note {
-    display: flex; align-items: center; gap: 10px;
-    font-size: 12px; color: rgba(255,255,255,.35);
-    letter-spacing: .06em; text-transform: uppercase;
-    margin-bottom: 36px; padding-bottom: 24px;
-    border-bottom: 1px solid rgba(255,255,255,.07);
-  }
-  .form-note::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
-  .fg { display: flex; flex-direction: column; gap: 7px; }
-  .fg2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
-  .fg1 { margin-bottom: 18px; }
-  .flabel {
-    font-size: 11px; font-weight: 600; letter-spacing: .15em;
-    text-transform: uppercase; color: rgba(255,255,255,.38);
-  }
-  .fctrl {
-    background: rgba(255,255,255,.05);
-    border: 1px solid rgba(255,255,255,.10);
-    border-radius: 8px; padding: 13px 16px;
-    color: var(--white); font-size: 14px; font-family: 'Outfit', sans-serif;
-    outline: none; transition: border-color .2s, background .2s;
-    -webkit-appearance: none; width: 100%;
-  }
-  .fctrl:focus { border-color: var(--gold); background: rgba(200,169,110,.06); }
-  .fctrl option { background: #1a2132; }
-  .preview-box {
-    background: rgba(37,211,102,.06);
-    border: 1px solid rgba(37,211,102,.18);
-    border-radius: var(--r); padding: 20px 22px;
-    margin: 24px 0; font-size: 13px;
-    color: rgba(255,255,255,.6); line-height: 1.75;
-  }
-  .preview-label {
-    font-size: 10px; font-weight: 700; letter-spacing: .18em;
-    text-transform: uppercase; color: #25d366; margin-bottom: 8px;
-  }
-  #prevTxt { color: rgba(255,255,255,.8); white-space: pre-wrap; }
-  .btn-wa-main {
-    display: flex; align-items: center; justify-content: center; gap: 12px;
-    width: 100%; background: #25d366; color: var(--white);
-    font-weight: 700; font-size: 15px; padding: 17px;
-    border-radius: var(--r); text-decoration: none; border: none;
-    font-family: 'Outfit', sans-serif; cursor: pointer;
-    transition: background .2s, transform .15s, box-shadow .2s;
-    box-shadow: 0 4px 20px rgba(37,211,102,.18);
-    letter-spacing: .02em;
-  }
-  .btn-wa-main:hover { background: #1fba5a; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,.32); }
+    .selector-icon {
+      font-size: 3.5rem;
+      line-height: 1;
+    }
+    .selector-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .selector-desc {
+      font-size: 0.9rem;
+      color: #aaa;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .selector-btn {
+      margin-top: 0.5rem;
+      padding: 0.65rem 1.8rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .selector-card.fam .selector-btn {
+      background: var(--fam-accent);
+      color: #111;
+    }
+    .selector-card.corp .selector-btn {
+      background: var(--corp-accent);
+      color: #0d1b2a;
+    }
+    .selector-btn:hover { transform: scale(1.05); }
 
-  /* ── CÓMO FUNCIONA ── */
-  #como { background: var(--white); }
-  .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 48px; position: relative; margin-top: 64px; }
-  .steps::before {
-    content: ''; position: absolute;
-    top: 36px; left: 16.5%; right: 16.5%; height: 1px;
-    background: linear-gradient(90deg, var(--gold), #8A96A8, var(--green));
-  }
-  .step { text-align: center; padding: 0 8px; }
-  .step-circle {
-    width: 72px; height: 72px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 900; font-size: 26px; letter-spacing: -.03em;
-    margin: 0 auto 22px; position: relative; z-index: 1;
-    border: 1.5px solid;
-  }
-  .step:nth-child(1) .step-circle { background: var(--gold); border-color: var(--gold); color: var(--ink); }
-  .step:nth-child(2) .step-circle { background: var(--ink); border-color: var(--ink); color: var(--white); }
-  .step:nth-child(3) .step-circle { background: var(--green); border-color: var(--green); color: var(--white); }
-  .step-t { font-weight: 700; font-size: 17px; margin-bottom: 10px; letter-spacing: -.02em; }
-  .step-d { font-size: 14px; color: #6A7485; line-height: 1.65; font-family: 'Lora', serif; }
+    /* ─────────────────────────────────────────
+       MAIN PAGE (hidden until selector chosen)
+    ───────────────────────────────────────── */
+    #main-page {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.7s ease 0.3s;
+    }
+    #main-page.visible { opacity: 1; visibility: visible; }
 
-  /* ── TESTIMONIALES ── */
-  #testi { background: var(--fog); }
-  .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 56px; }
-  .tcard {
-    background: var(--white); border-radius: var(--r2);
-    padding: 30px 26px;
-    border-left: 3px solid var(--gold);
-  }
-  .tcard.blue  { border-color: var(--ink3); }
-  .tcard.green { border-color: var(--green); }
-  .stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; margin-bottom: 14px; }
-  .ttext {
-    font-family: 'Lora', serif; font-style: italic;
-    font-size: 15px; color: #3A4252; line-height: 1.7;
-    margin-bottom: 20px;
-  }
-  .tauthor { font-weight: 700; font-size: 13px; }
-  .trole   { font-size: 12px; color: var(--silver); margin-top: 2px; }
+    /* ─────────────────────────────────────────
+       THEME CLASSES
+    ───────────────────────────────────────── */
+    body.theme-fam {
+      --primary: var(--fam-primary);
+      --accent: var(--fam-accent);
+      --warm: var(--fam-warm);
+      --light: var(--fam-light);
+      --muted: var(--fam-muted);
+      --hero-bg: linear-gradient(135deg, #1a0533 0%, #2d0a4e 40%, #180020 100%);
+    }
+    body.theme-corp {
+      --primary: var(--corp-primary);
+      --accent: var(--corp-accent);
+      --warm: var(--corp-silver);
+      --light: var(--corp-light);
+      --muted: var(--corp-muted);
+      --hero-bg: linear-gradient(135deg, #0d1b2a 0%, #142236 40%, #0a1520 100%);
+    }
 
-  /* ── FAQ ── */
-  #faq { background: var(--ink); }
-  #faq .sec-title { color: var(--white); }
-  .faq-wrap { max-width: 720px; margin: 48px auto 0; }
-  .fitem { border-bottom: 1px solid rgba(255,255,255,.08); }
-  .fq {
-    width: 100%; text-align: left; background: none; border: none;
-    padding: 22px 0; display: flex; align-items: center;
-    justify-content: space-between; gap: 16px; cursor: pointer;
-    font-family: 'Outfit', sans-serif; font-size: 15px;
-    font-weight: 500; color: rgba(255,255,255,.85);
-  }
-  .fq:hover { color: var(--white); }
-  .ficon {
-    width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
-    border: 1px solid rgba(200,169,110,.4);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px; color: var(--gold);
-    transition: transform .3s, background .2s;
-  }
-  .fitem.open .ficon { transform: rotate(45deg); background: var(--gold); color: var(--ink); border-color: var(--gold); }
-  .fa-txt {
-    font-size: 14px; color: rgba(255,255,255,.45);
-    line-height: 1.75; max-height: 0; overflow: hidden;
-    transition: max-height .35s ease, padding .35s;
-    font-family: 'Lora', serif; padding-bottom: 0;
-  }
-  .fitem.open .fa-txt { max-height: 300px; padding-bottom: 22px; }
+    /* ─────────────────────────────────────────
+       NAV
+    ───────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2.5rem;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.8rem;
+      letter-spacing: -1px;
+      color: var(--accent, #f5c518);
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #ccc;
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--accent, #f5c518); }
+    .nav-cta {
+      background: var(--accent, #f5c518);
+      color: #111 !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 50px;
+      font-weight: 600 !important;
+    }
+    .nav-switch {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #aaa;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-left: 1rem;
+    }
+    .nav-switch:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* ── CTA FINAL ── */
-  #cta { background: var(--ink2); text-align: center; padding: 100px 28px; }
-  #cta h2 {
-    font-weight: 900; font-size: clamp(34px, 5.5vw, 66px);
-    letter-spacing: -.04em; line-height: 1.02;
-    color: var(--white); margin-bottom: 18px;
-  }
-  #cta h2 em { font-style: normal; color: var(--gold); }
-  #cta p { color: rgba(255,255,255,.38); font-size: 16px; margin-bottom: 44px; font-family: 'Lora', serif; font-style: italic; }
-  .cta-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    /* ─────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      background: var(--hero-bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .theme-fam .hero-orb-1 { width: 500px; height: 500px; background: rgba(245,197,24,0.12); top: -100px; right: -100px; }
+    .theme-fam .hero-orb-2 { width: 350px; height: 350px; background: rgba(255,107,53,0.10); bottom: -80px; left: -80px; }
+    .theme-corp .hero-orb-1 { width: 500px; height: 500px; background: rgba(0,194,203,0.1); top: -100px; right: -100px; }
+    .theme-corp .hero-orb-2 { width: 350px; height: 350px; background: rgba(0,100,180,0.12); bottom: -80px; left: -80px; }
 
-  /* ── FOOTER ── */
-  footer {
-    background: #080C11; padding: 28px;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 14px;
-    border-top: 1px solid rgba(200,169,110,.1);
-  }
-  .flogo { font-weight: 900; font-size: 18px; color: var(--white); letter-spacing: -.03em; }
-  .flogo span { color: var(--gold); }
-  footer p { font-size: 12px; color: rgba(255,255,255,.25); letter-spacing: .04em; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50px;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.8rem;
+      animation: fadeDown 0.8s ease both;
+    }
+    @keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeUp   { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
 
-  /* ── FLOAT WA ── */
-  .float-wa {
-    position: fixed; bottom: 26px; right: 26px; z-index: 200;
-    width: 56px; height: 56px; border-radius: 50%;
-    background: #25d366;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 20px rgba(37,211,102,.35);
-    text-decoration: none; animation: pulse 3s infinite;
-    transition: transform .2s;
-  }
-  .float-wa:hover { transform: scale(1.08); animation: none; }
-  @keyframes pulse {
-    0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.35); }
-    50% { box-shadow: 0 4px 28px rgba(37,211,102,.6), 0 0 0 7px rgba(37,211,102,.09); }
-  }
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      max-width: 800px;
+      animation: fadeUp 0.9s ease 0.2s both;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-top: 1.5rem;
+      animation: fadeUp 0.9s ease 0.4s both;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 0.9s ease 0.6s both;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #111;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); filter: brightness(1.1); }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 1rem;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
 
-  /* ── REVEAL ── */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
-  .reveal.on { opacity: 1; transform: translateY(0); }
+    .hero-proof {
+      margin-top: 4rem;
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.9s ease 0.8s both;
+    }
+    .proof-item { text-align: center; }
+    .proof-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .proof-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-top: 0.2rem; letter-spacing: 0.06em; text-transform: uppercase; }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .nichos-row { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr; gap: 32px; }
-    .steps::before { display: none; }
-    .testi-grid { grid-template-columns: 1fr; }
-    .fg2 { grid-template-columns: 1fr; }
-    .form-wrap { padding: 28px 18px; }
-    .hero-divider { gap: 28px; }
-    footer { flex-direction: column; text-align: center; }
-  }
+    /* ─────────────────────────────────────────
+       SECTION WRAPPER
+    ───────────────────────────────────────── */
+    section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .section-full { max-width: 100%; padding: 6rem 0; }
+    .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-  /* ── WA SVG INLINE ── */
-  .wa-ico { flex-shrink: 0; }
-</style>
+    .section-tag {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 1.2rem;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.55);
+      max-width: 550px;
+      line-height: 1.7;
+    }
+
+    /* ─────────────────────────────────────────
+       EQUIPMENT SECTION
+    ───────────────────────────────────────── */
+    #equipo { background: #0f0f0f; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .equipo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .equipo-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      transition: var(--transition);
+    }
+    .equipo-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+    .equipo-icon { font-size: 2.2rem; }
+    .equipo-name { font-weight: 600; font-size: 1rem; }
+    .equipo-detail { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+    /* ─────────────────────────────────────────
+       PACKAGES
+    ───────────────────────────────────────── */
+    #paquetes { background: #0a0a0a; }
+    .packages-header { max-width: 600px; }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .pkg-card {
+      background: rgba(255,255,255,0.03);
+      border: 1.5px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2rem;
+      position: relative;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .pkg-card:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+    .pkg-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    }
+    .pkg-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #111;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+    .pkg-emoji { font-size: 2rem; margin-bottom: 0.5rem; }
+    .pkg-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .pkg-tagline { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; }
+    .pkg-price {
+      margin-bottom: 1.5rem;
+    }
+    .pkg-price .amount {
+      font-family: 'Space Mono', monospace;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .pkg-price .period { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-left: 0.3rem; }
+    .pkg-includes { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem; flex: 1; }
+    .pkg-includes li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+    .pkg-includes li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .pkg-btn {
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+    .pkg-btn.accent { background: var(--accent); color: #111; }
+    .pkg-btn.outline { background: transparent; border: 1.5px solid rgba(255,255,255,0.2); color: #fff; }
+    .pkg-btn:hover { transform: scale(1.03); filter: brightness(1.1); }
+
+    /* ─────────────────────────────────────────
+       ADICIONALES / ADD-ONS
+    ───────────────────────────────────────── */
+    #adicionales { background: #0f0f0f; border-top: 1px solid rgba(255,255,255,0.05); }
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .addon-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+    .addon-card:hover, .addon-card.selected {
+      border-color: var(--accent);
+      background: rgba(255,255,255,0.07);
+    }
+    .addon-card.selected::after {
+      content: '✓';
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .addon-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+    .addon-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .addon-price { font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--accent); }
+    .addon-note { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 0.3rem; }
+
+    /* ─────────────────────────────────────────
+       RESERVATION FORM
+    ───────────────────────────────────────── */
+    #reservar {
+      background: var(--hero-bg, #0a0a0a);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .form-wrapper {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      max-width: 680px;
+      margin: 3rem auto 0;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      color: #fff;
+      font-size: 0.95rem;
+      transition: border-color var(--transition);
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--accent); }
+    .form-group select option { background: #1a1a1a; color: #fff; }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-addons-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.8rem;
+    }
+    .form-addons-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .chip {
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: var(--transition);
+      user-select: none;
+    }
+    .chip:hover, .chip.active { background: var(--accent); color: #111; border-color: var(--accent); font-weight: 600; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 50px;
+      background: var(--accent);
+      color: #111;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); filter: brightness(1.1); }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+
+    /* ─────────────────────────────────────────
+       SUCCESS MESSAGE
+    ───────────────────────────────────────── */
+    #success-msg {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    #success-msg .big-emoji { font-size: 4rem; margin-bottom: 1rem; }
+    #success-msg h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+    #success-msg p { color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 400px; margin: 0 auto; }
+
+    /* ─────────────────────────────────────────
+       CONTACT STRIP
+    ───────────────────────────────────────── */
+    #contacto {
+      background: #080808;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+    .contact-grid {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      transition: color var(--transition);
+    }
+    .contact-item:hover { color: var(--accent); }
+    .contact-item .icon { font-size: 1.3rem; }
+
+    .wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: #25D366;
+      color: #fff;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-top: 2.5rem;
+      transition: var(--transition);
+    }
+    .wa-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(37,211,102,0.3); }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────── */
+    footer {
+      background: #050505;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent, #f5c518);
+      margin-bottom: 0.5rem;
+    }
+    .footer-copy { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+
+    /* ─────────────────────────────────────────
+       THEME TITLE CHANGES
+    ───────────────────────────────────────── */
+    .fam-only, .corp-only { display: none; }
+    .theme-fam .fam-only { display: block; }
+    .theme-corp .corp-only { display: block; }
+    .fam-inline, .corp-inline { display: none; }
+    .theme-fam .fam-inline { display: inline; }
+    .theme-corp .corp-inline { display: inline; }
+
+    /* ─────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: 1; }
+      .form-wrapper { padding: 2rem 1.5rem; }
+      .hero-proof { gap: 1.5rem; }
+      section { padding: 4rem 1.2rem; }
+    }
+    @media (max-width: 480px) {
+      .selector-cards { flex-direction: column; align-items: center; }
+      .selector-card { width: 100%; max-width: 320px; }
+    }
+
+    /* ─────────────────────────────────────────
+       SCROLL REVEAL
+    ───────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <div class="logo">LU<span>MIK</span><sub>Audiovisual</sub></div>
+<!-- ═══════════════════════════════════════════
+     INTRO / SELECTOR SCREEN
+═══════════════════════════════════════════ -->
+<div id="intro">
+  <div class="intro-logo">lumik</div>
+  <div class="intro-tagline">Experiencias Audiovisuales · Mérida, Yucatán</div>
+  <p class="intro-question">¿Dónde quieres que ocurra la magia?</p>
+  <div class="selector-cards">
+    <div class="selector-card fam" onclick="setTheme('fam')">
+      <div class="selector-icon">🎬</div>
+      <div class="selector-title">En casa</div>
+      <p class="selector-desc">Cine familiar, fiestas privadas, karaoke, noches de película en exteriores.</p>
+      <button class="selector-btn">¡Quiero esto!</button>
+    </div>
+    <div class="selector-card corp" onclick="setTheme('corp')">
+      <div class="selector-icon">💼</div>
+      <div class="selector-title">En mi trabajo</div>
+      <p class="selector-desc">Presentaciones ejecutivas, inauguraciones, eventos corporativos, PYMES.</p>
+      <button class="selector-btn">Soy profesional</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MAIN PAGE
+═══════════════════════════════════════════ -->
+<div id="main-page">
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">lumik</a>
     <div class="nav-links">
-      <a href="#selector">Paquetes</a>
-      <a href="#formulario">Cotizar</a>
-      <a href="#como">Proceso</a>
-      <a href="#faq">FAQ</a>
-      <a href="/cdn-cgi/l/email-protection#a8c1c6cec7e8c4ddc5c1c386c5d0" style="color:var(--gold);opacity:.85;display:flex;align-items:center;gap:6px;">
-        <svg width="13" height="13" fill="none" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 7l10 7 10-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <span class="__cf_email__" data-cfemail="fa93949c95ba968f979391d49782">[email&#160;protected]</span>
-      </a>
+      <a href="#equipo">Equipo</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#reservar" class="nav-cta">Reservar fecha →</a>
+      <button class="nav-switch" onclick="showIntro()">Cambiar perfil</button>
     </div>
-    <a href="#formulario" class="nav-cta">Reservar</a>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-noise"></div>
-  <div class="hero-line"></div>
-  <div class="hero-line"></div>
-  <div class="hero-line"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-kicker">
-      <div class="hero-kicker-line"></div>
-      <span>Zona Norte · Mérida, Yucatán</span>
-    </div>
-    <h1>Equipo<br>audiovisual<br><span class="outline">profesional.</span></h1>
-    <p class="hero-sub">Proyección 4K, pantallas de hasta 100&quot; y micrófonos inalámbricos. Nosotros instalamos, tú disfrutas. Sin sorpresas.</p>
+  <!-- HERO -->
+  <section id="hero" style="max-width:100%; padding:0;">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+
+    <span class="hero-badge">
+      <span>📍</span> Mérida, Yucatán · Entrega a domicilio
+    </span>
+
+    <!-- FAM -->
+    <h1 class="hero-headline fam-only">
+      Tu sala,<br><em>tu cine.</em><br>Tu noche, épica.
+    </h1>
+    <!-- CORP -->
+    <h1 class="hero-headline corp-only">
+      Impresiona.<br><em>Proyecta.</em><br>Cierra el trato.
+    </h1>
+
+    <!-- FAM -->
+    <p class="hero-sub fam-only">
+      Renta nuestro proyector Wanbo T5 Pro con pantalla de 100" y Google TV. La experiencia de cine que tu familia merece, en tu propio hogar.
+    </p>
+    <!-- CORP -->
+    <p class="hero-sub corp-only">
+      Proyecciones de alta definición para presentaciones ejecutivas, lanzamientos de productos e inauguraciones. Imagen impecable que refuerza tu marca.
+    </p>
+
     <div class="hero-actions">
-      <a href="#selector" class="btn-gold">
-        <svg width="17" height="17" fill="none" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Ver paquetes
+      <a href="#paquetes"><button class="btn-primary">Ver paquetes →</button></a>
+      <a href="#reservar"><button class="btn-outline">Reservar fecha</button></a>
+    </div>
+
+    <div class="hero-proof">
+      <div class="proof-item">
+        <div class="proof-num">100"</div>
+        <div class="proof-label">Pantalla incluida</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">4K</div>
+        <div class="proof-label">Resolución nativa</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">Google TV</div>
+        <div class="proof-label">Integrado</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">Mérida</div>
+        <div class="proof-label">Entrega e instalación</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <div id="equipo" class="section-full">
+    <div class="section-inner">
+      <span class="section-tag reveal">Lo que incluye</span>
+      <h2 class="section-title reveal">Equipo Profesional<br>de Alta Gama</h2>
+      <p class="section-sub reveal">Todo llega a tu puerta, instalado y listo. No necesitas saber de tecnología.</p>
+
+      <div class="equipo-grid">
+        <div class="equipo-card reveal reveal-delay-1">
+          <div class="equipo-icon">📽️</div>
+          <div class="equipo-name">Proyector Wanbo T5 Pro</div>
+          <div class="equipo-detail">Resolución 4K, brillo 700 ANSI, enfoque automático, corrección keystone IA, sonido integrado 10W.</div>
+        </div>
+        <div class="equipo-card reveal reveal-delay-1">
+          <div class="equipo-icon">🎞️</div>
+          <div class="equipo-name">Pantalla 100" + Trípode</div>
+          <div class="equipo-detail">Pantalla de proyección portátil 100 pulgadas con base. Lista para interior o exterior.</div>
+        </div>
+        <div class="equipo-card reveal reveal-delay-2">
+          <div class="equipo-icon">📺</div>
+          <div class="equipo-name">Google TV Integrado</div>
+          <div class="equipo-detail">Netflix, Disney+, YouTube, Prime Video y 700,000 apps. Sin necesidad de Chromecast adicional.</div>
+        </div>
+        <div class="equipo-card reveal reveal-delay-2">
+          <div class="equipo-icon">🔌</div>
+          <div class="equipo-name">Instalación & Retiro</div>
+          <div class="equipo-detail">Nuestro equipo llega, instala, configura y regresa al final. Tú solo disfrutas.</div>
+        </div>
+        <div class="equipo-card reveal reveal-delay-3">
+          <div class="equipo-icon">📡</div>
+          <div class="equipo-name">HDMI & Control</div>
+          <div class="equipo-detail">Control remoto Bluetooth, cable HDMI incluido. Compatible con laptop, consola o celular.</div>
+        </div>
+        <div class="equipo-card reveal reveal-delay-3">
+          <div class="equipo-icon">🛡️</div>
+          <div class="equipo-name">Equipo Asegurado</div>
+          <div class="equipo-detail">Todo el equipo viene con contrato de renta y depósito de garantía reembolsable.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAQUETES -->
+  <section id="paquetes">
+    <div class="packages-header">
+      <span class="section-tag reveal">Precios transparentes</span>
+      <h2 class="section-title reveal fam-only">Paquetes para<br><em>tu noche perfecta</em></h2>
+      <h2 class="section-title reveal corp-only">Paquetes para<br><em>tu presentación estelar</em></h2>
+      <p class="section-sub reveal">Todos los precios incluyen entrega, instalación y retiro en Mérida.</p>
+    </div>
+
+    <!-- FAM PACKAGES -->
+    <div class="packages-grid fam-only" id="pkgs-fam">
+      <div class="pkg-card reveal reveal-delay-1">
+        <div class="pkg-emoji">🍿</div>
+        <div class="pkg-name">Básico</div>
+        <div class="pkg-tagline">La experiencia esencial</div>
+        <div class="pkg-price">
+          <span class="amount">$799</span>
+          <span class="period">/ noche</span>
+        </div>
+        <ul class="pkg-includes">
+          <li>Proyector Wanbo T5 Pro</li>
+          <li>Pantalla 100" con trípode</li>
+          <li>Google TV integrado</li>
+          <li>Instalación y retiro</li>
+          <li>Soporte vía WhatsApp</li>
+        </ul>
+        <button class="pkg-btn outline" onclick="selectPackage('Básico Familiar — $799/noche')">Seleccionar</button>
+      </div>
+
+      <div class="pkg-card featured reveal reveal-delay-2">
+        <div class="pkg-badge">⭐ Más popular</div>
+        <div class="pkg-emoji">🎭</div>
+        <div class="pkg-name">Cine Premium</div>
+        <div class="pkg-tagline">La noche perfecta de película</div>
+        <div class="pkg-price">
+          <span class="amount">$1,199</span>
+          <span class="period">/ noche</span>
+        </div>
+        <ul class="pkg-includes">
+          <li>Todo lo del paquete Básico</li>
+          <li>Paquete Cine (palomitas, refrescos, chocolates)</li>
+          <li>1 micrófono inalámbrico</li>
+          <li>Hasta 6 horas de renta</li>
+          <li>Configuración personalizada</li>
+        </ul>
+        <button class="pkg-btn accent" onclick="selectPackage('Cine Premium Familiar — $1,199/noche')">Seleccionar →</button>
+      </div>
+
+      <div class="pkg-card reveal reveal-delay-3">
+        <div class="pkg-emoji">🎤</div>
+        <div class="pkg-name">Fiesta Total</div>
+        <div class="pkg-tagline">Karaoke + cine + diversión</div>
+        <div class="pkg-price">
+          <span class="amount">$1,699</span>
+          <span class="period">/ noche</span>
+        </div>
+        <ul class="pkg-includes">
+          <li>Todo lo del paquete Premium</li>
+          <li>2 micrófonos inalámbricos</li>
+          <li>App de karaoke configurada</li>
+          <li>Sistema de sonido mejorado</li>
+          <li>Hasta 8 horas de renta</li>
+          <li>Paquete snacks completo</li>
+        </ul>
+        <button class="pkg-btn outline" onclick="selectPackage('Fiesta Total — $1,699/noche')">Seleccionar</button>
+      </div>
+    </div>
+
+    <!-- CORP PACKAGES -->
+    <div class="packages-grid corp-only" id="pkgs-corp">
+      <div class="pkg-card reveal reveal-delay-1">
+        <div class="pkg-emoji">📊</div>
+        <div class="pkg-name">Presentación</div>
+        <div class="pkg-tagline">Para reuniones y juntas</div>
+        <div class="pkg-price">
+          <span class="amount">$899</span>
+          <span class="period">/ día</span>
+        </div>
+        <ul class="pkg-includes">
+          <li>Proyector Wanbo T5 Pro</li>
+          <li>Pantalla 100" con trípode</li>
+          <li>HDMI + adaptadores</li>
+          <li>Instalación y retiro</li>
+          <li>Hasta 8 horas</li>
+        </ul>
+        <button class="pkg-btn outline" onclick="selectPackage('Presentación Corporativo — $899/día')">Seleccionar</button>
+      </div>
+
+      <div class="pkg-card featured reveal reveal-delay-2">
+        <div class="pkg-badge">⭐ Recomendado</div>
+        <div class="pkg-emoji">🏆</div>
+        <div class="pkg-name">Ejecutivo Pro</div>
+        <div class="pkg-tagline">Impresiona a tu audiencia</div>
+        <div class="pkg-price">
+          <span class="amount">$1,399</span>
+          <span class="period">/ día</span>
+        </div>
+        <ul class="pkg-includes">
+          <li>Todo lo del paquete Presentación</li>
+          <li>1 micrófono inalámbrico</li>
+          <li>Sistema de sonido mejorado</li>
+          <li>Asistencia técnica en sitio</li>
+          <li>Setup y prueba previa</li>
+        </ul>
+        <button class="pkg-btn accent" onclick="selectPackage('Ejecutivo Pro — $1,399/día')">Seleccionar →</button>
+      </div>
+
+      <div class="pkg-card reveal reveal-delay-3">
+        <div class="pkg-emoji">🚀</div>
+        <div class="pkg-name">Lanzamiento</div>
+        <div class="pkg-tagline">Inauguraciones y eventos</div>
+        <div class="pkg-price">
+          <span class="amount">$2,199</span>
+          <span class="period">/ evento</span>
+        </div>
+        <ul class="pkg-includes">
+          <li>Todo lo del paquete Ejecutivo</li>
+          <li>2 micrófonos inalámbricos</li>
+          <li>Técnico presente todo el evento</li>
+          <li>Hasta 10 horas</li>
+          <li>Setup en exterior disponible</li>
+          <li>Coordinación previa al evento</li>
+        </ul>
+        <button class="pkg-btn outline" onclick="selectPackage('Lanzamiento Corporativo — $2,199/evento')">Seleccionar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADICIONALES -->
+  <div id="adicionales" class="section-full">
+    <div class="section-inner">
+      <span class="section-tag reveal">Personaliza tu experiencia</span>
+      <h2 class="section-title reveal">Agrega lo que<br>necesites</h2>
+
+      <div class="addons-grid" id="addons-display">
+        <!-- FAM addons -->
+        <div class="addon-card fam-only reveal reveal-delay-1" data-name="Paquete Cine Snacks" data-price="$250">
+          <div class="addon-icon">🍿</div>
+          <div class="addon-name">Paquete Cine Snacks</div>
+          <div class="addon-price">+ $250</div>
+          <div class="addon-note">Palomitas, refrescos, chocolates y galletas para 4 personas</div>
+        </div>
+        <div class="addon-card fam-only reveal reveal-delay-1" data-name="2do Micrófono Inalámbrico" data-price="$150">
+          <div class="addon-icon">🎤</div>
+          <div class="addon-name">2do Micrófono</div>
+          <div class="addon-price">+ $150</div>
+          <div class="addon-note">Karaoke para dos. ¡Duetos épicos garantizados!</div>
+        </div>
+        <div class="addon-card fam-only reveal reveal-delay-2" data-name="Sistema de Sonido Mejorado" data-price="$300">
+          <div class="addon-icon">🔊</div>
+          <div class="addon-name">Sonido Mejorado</div>
+          <div class="addon-price">+ $300</div>
+          <div class="addon-note">Bocina Bluetooth extra para llenar tu sala de sonido</div>
+        </div>
+        <div class="addon-card fam-only reveal reveal-delay-2" data-name="Karaoke Configurado" data-price="$100">
+          <div class="addon-icon">🎵</div>
+          <div class="addon-name">Karaoke Listo</div>
+          <div class="addon-price">+ $100</div>
+          <div class="addon-note">App configurada con las canciones que pidas, lista para usar</div>
+        </div>
+        <div class="addon-card fam-only reveal reveal-delay-3" data-name="Horas Extra (por hora)" data-price="$150">
+          <div class="addon-icon">⏰</div>
+          <div class="addon-name">Horas Extra</div>
+          <div class="addon-price">+ $150/hr</div>
+          <div class="addon-note">¿La noche está increíble? Extiende la renta por hora</div>
+        </div>
+        <div class="addon-card fam-only reveal reveal-delay-3" data-name="Exterior (jardín/patio)" data-price="$200">
+          <div class="addon-icon">🌙</div>
+          <div class="addon-name">Setup Exterior</div>
+          <div class="addon-price">+ $200</div>
+          <div class="addon-note">Instalación en jardín o patio. Cine bajo las estrellas.</div>
+        </div>
+
+        <!-- CORP addons -->
+        <div class="addon-card corp-only reveal reveal-delay-1" data-name="Micrófono Inalámbrico" data-price="$150">
+          <div class="addon-icon">🎤</div>
+          <div class="addon-name">Micrófono Inalámbrico</div>
+          <div class="addon-price">+ $150</div>
+          <div class="addon-note">1 micrófono inalámbrico profesional para ponentes</div>
+        </div>
+        <div class="addon-card corp-only reveal reveal-delay-1" data-name="2do Micrófono" data-price="$150">
+          <div class="addon-icon">🎙️</div>
+          <div class="addon-name">2do Micrófono</div>
+          <div class="addon-price">+ $150</div>
+          <div class="addon-note">Panel de dos ponentes o sesión de preguntas y respuestas</div>
+        </div>
+        <div class="addon-card corp-only reveal reveal-delay-2" data-name="Sistema de Sonido Mejorado" data-price="$350">
+          <div class="addon-icon">🔊</div>
+          <div class="addon-name">Sonido Profesional</div>
+          <div class="addon-price">+ $350</div>
+          <div class="addon-note">Bocina adicional para auditorios o espacios grandes</div>
+        </div>
+        <div class="addon-card corp-only reveal reveal-delay-2" data-name="Técnico en Sitio" data-price="$500">
+          <div class="addon-icon">🧑‍💻</div>
+          <div class="addon-name">Técnico en Sitio</div>
+          <div class="addon-price">+ $500</div>
+          <div class="addon-note">Técnico presente durante todo tu evento para soporte inmediato</div>
+        </div>
+        <div class="addon-card corp-only reveal reveal-delay-3" data-name="Setup Exterior/Toldo" data-price="$300">
+          <div class="addon-icon">🏗️</div>
+          <div class="addon-name">Setup Exterior</div>
+          <div class="addon-price">+ $300</div>
+          <div class="addon-note">Instalación en espacios abiertos. Ideal para lanzamientos.</div>
+        </div>
+        <div class="addon-card corp-only reveal reveal-delay-3" data-name="Horas Extra" data-price="$200/hr">
+          <div class="addon-icon">⏰</div>
+          <div class="addon-name">Horas Extra</div>
+          <div class="addon-price">+ $200/hr</div>
+          <div class="addon-note">Extiende el tiempo de renta cuando el evento lo requiera</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESERVAR FORM -->
+  <div id="reservar" class="section-full">
+    <div class="section-inner">
+      <div style="text-align:center; max-width:600px; margin:0 auto;">
+        <span class="section-tag reveal">Sin compromiso</span>
+        <h2 class="section-title reveal fam-only">Reserva tu<br><em>noche mágica</em></h2>
+        <h2 class="section-title reveal corp-only">Agenda tu<br><em>presentación</em></h2>
+        <p class="section-sub reveal" style="margin:0 auto;">Completa el formulario y en minutos recibes tu confirmación y liga de pago.</p>
+      </div>
+
+      <div class="form-wrapper reveal">
+        <form id="reserva-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Nombre completo</label>
+              <input type="text" id="f-nombre" placeholder="Carlos Magaña" required />
+            </div>
+            <div class="form-group">
+              <label>Celular / WhatsApp</label>
+              <input type="tel" id="f-tel" placeholder="999 000 0000" required />
+            </div>
+            <div class="form-group">
+              <label>Correo electrónico</label>
+              <input type="email" id="f-email" placeholder="carlos@empresa.com" required />
+            </div>
+            <div class="form-group">
+              <label>Fecha del evento</label>
+              <input type="date" id="f-fecha" required />
+            </div>
+            <div class="form-group full">
+              <label>Paquete seleccionado</label>
+              <select id="f-paquete" required>
+                <option value="">— Elige tu paquete —</option>
+                <!-- FAM -->
+                <option class="fam-opt" value="Básico Familiar — $799/noche">🍿 Básico Familiar — $799/noche</option>
+                <option class="fam-opt" value="Cine Premium Familiar — $1,199/noche">🎭 Cine Premium — $1,199/noche</option>
+                <option class="fam-opt" value="Fiesta Total — $1,699/noche">🎤 Fiesta Total — $1,699/noche</option>
+                <!-- CORP -->
+                <option class="corp-opt" value="Presentación Corporativo — $899/día">📊 Presentación — $899/día</option>
+                <option class="corp-opt" value="Ejecutivo Pro — $1,399/día">🏆 Ejecutivo Pro — $1,399/día</option>
+                <option class="corp-opt" value="Lanzamiento Corporativo — $2,199/evento">🚀 Lanzamiento — $2,199/evento</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>Dirección del evento</label>
+              <input type="text" id="f-dir" placeholder="Calle, Colonia, Mérida, Yucatán" required />
+            </div>
+          </div>
+
+          <div style="margin: 1.5rem 0 0.5rem;">
+            <p class="form-addons-label">Adicionales deseados (opcional):</p>
+            <div class="form-addons-chips" id="chips-fam">
+              <span class="chip fam-only" data-val="Paquete Snacks">🍿 Snacks</span>
+              <span class="chip fam-only" data-val="Micrófono extra">🎤 Mic extra</span>
+              <span class="chip fam-only" data-val="Sonido mejorado">🔊 Mejor sonido</span>
+              <span class="chip fam-only" data-val="Karaoke configurado">🎵 Karaoke</span>
+              <span class="chip fam-only" data-val="Setup exterior">🌙 Exterior</span>
+              <span class="chip fam-only" data-val="Horas extra">⏰ Horas extra</span>
+
+              <span class="chip corp-only" data-val="Micrófono">🎤 Micrófono</span>
+              <span class="chip corp-only" data-val="2do micrófono">🎙️ 2do Mic</span>
+              <span class="chip corp-only" data-val="Sonido profesional">🔊 Sonido Pro</span>
+              <span class="chip corp-only" data-val="Técnico en sitio">🧑‍💻 Técnico</span>
+              <span class="chip corp-only" data-val="Setup exterior">🏗️ Exterior</span>
+              <span class="chip corp-only" data-val="Horas extra">⏰ Horas extra</span>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:0.5rem;">
+            <label>Notas adicionales</label>
+            <textarea id="f-notas" placeholder="Cuéntanos sobre tu evento, horarios, acceso al lugar o cualquier detalle..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>📲</span> Enviar solicitud de reserva
+          </button>
+          <p class="form-note">
+            Tu solicitud llegará automáticamente por WhatsApp y correo.<br>
+            En breve recibirás confirmación y liga de pago seguro.
+          </p>
+        </form>
+
+        <div id="success-msg">
+          <div class="big-emoji">🎉</div>
+          <h3>¡Gracias por tu solicitud!</h3>
+          <p>Recibimos tu reserva. En un momento recibirás tu <strong>confirmación</strong> y <strong>liga de pago</strong> por WhatsApp y correo. ¡Nos vemos pronto!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACTO -->
+  <div id="contacto" class="section-full">
+    <div class="section-inner" style="text-align:center;">
+      <span class="section-tag reveal">Estamos aquí</span>
+      <h2 class="section-title reveal" style="margin:0 auto 0.5rem;">Contáctanos<br>cuando quieras</h2>
+      <p class="section-sub reveal" style="margin:0 auto;">Resolvemos tus dudas antes de reservar. Sin presión.</p>
+
+      <div class="contact-grid reveal" style="margin-top:2.5rem;">
+        <a href="mailto:info@lumik.mx" class="contact-item">
+          <span class="icon">✉️</span>
+          <span>info@lumik.mx</span>
+        </a>
+        <a href="https://wa.me/529992171955" target="_blank" class="contact-item">
+          <span class="icon">💬</span>
+          <span>(999) 217-1955</span>
+        </a>
+        <span class="contact-item">
+          <span class="icon">📍</span>
+          <span>Mérida, Yucatán, México</span>
+        </span>
+      </div>
+
+      <a href="https://wa.me/529992171955?text=Hola%2C%20me%20interesa%20rentar%20el%20proyector%20en%20M%C3%A9rida.%20%C2%BFTienen%20disponibilidad%3F" target="_blank" class="wa-btn reveal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Cotizar por WhatsApp
       </a>
-      <a href="#formulario" class="btn-outline-w">Cotizar gratis →</a>
-    </div>
-    <div class="hero-divider">
-      <div>
-        <div class="stat-val">4K<em>·</em></div>
-        <div class="stat-lbl">Proyector Ansi 1,100 lm</div>
-      </div>
-      <div>
-        <div class="stat-val">100<em>"</em></div>
-        <div class="stat-lbl">Pantalla máxima disponible</div>
-      </div>
-      <div>
-        <div class="stat-val">3<em>+</em></div>
-        <div class="stat-lbl">Tipos de evento</div>
-      </div>
-      <div>
-        <div class="stat-val">0<em>$</em></div>
-        <div class="stat-lbl">Cargos ocultos</div>
-      </div>
     </div>
   </div>
-</section>
 
-<!-- SELECTOR -->
-<section id="selector">
-  <div class="container">
-    <div class="reveal">
-      <div class="sec-kicker">¿Qué tipo de evento tienes?</div>
-      <h2 class="sec-title">Elige tu evento.<br>Te mostramos tu paquete.</h2>
-      <p class="sec-sub">Precios fijos, sin negociación. Todo incluido.</p>
-    </div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">lumik</div>
+    <p class="footer-copy">
+      © 2025 Lumik · Renta de Experiencias Audiovisuales · Mérida, Yucatán<br>
+      <a href="mailto:info@lumik.mx" style="color:rgba(255,255,255,0.4);">info@lumik.mx</a> · 
+      <a href="https://wa.me/529992171955" style="color:rgba(255,255,255,0.4);">(999) 217-1955</a>
+    </p>
+  </footer>
 
-    <div class="nichos-row reveal" style="margin-top:44px;">
-      <div class="nicho-btn ka" onclick="showPanel('ka')">
-        <span class="nicho-badge">Popular</span>
-        <span class="nicho-ico">🎤</span>
-        <div class="nicho-label">Karaoke &amp; Eventos Privados</div>
-        <div class="nicho-hint">Fiestas, cumpleaños adultos, reuniones. Pantalla 100&quot; + 2 micrófonos.</div>
-      </div>
-      <div class="nicho-btn ci" onclick="showPanel('ci')">
-        <span class="nicho-badge">Familias</span>
-        <span class="nicho-ico">🎬</span>
-        <div class="nicho-label">Cine &amp; Pijamadas Infantiles</div>
-        <div class="nicho-hint">Disney, Marvel, maratones. Pantalla gigante en tu sala o jardín.</div>
-      </div>
-      <div class="nicho-btn co" onclick="showPanel('co')">
-        <span class="nicho-badge">Corporativo</span>
-        <span class="nicho-ico">📊</span>
-        <div class="nicho-label">Presentaciones &amp; Desayunos</div>
-        <div class="nicho-hint">Juntas de negocio, lanzamientos, capacitaciones. Factura disponible.</div>
-      </div>
-    </div>
+</div><!-- /#main-page -->
 
-    <!-- PANEL KARAOKE -->
-    <div class="panel" id="pka">
-      <div class="panel-bar">
-        <span class="panel-ico">🎤</span>
-        <div>
-          <div class="panel-name">Karaoke &amp; Eventos Privados</div>
-          <div class="panel-caption">Instalación y desmontaje incluidos · Zona norte sin cargo adicional</div>
-        </div>
-      </div>
-      <div class="pkgs">
-        <div class="pkg ka">
-          <div class="pkg-name">Básico</div>
-          <div class="pkg-price">$1,000</div>
-          <div class="pkg-dur">MXN · hasta 4 horas</div>
-          <ul class="pkg-feats">
-            <li>Proyector 4K 1,100 Ansi Lm</li>
-            <li>Pantalla 70&quot; con tripie</li>
-            <li>1 Micrófono inalámbrico</li>
-            <li>Instalación y desmontaje</li>
-            <li>Soporte WhatsApp durante el evento</li>
-          </ul>
-          <button class="btn-pkg" onclick="waRapido('ka','Básico','$1,000 MXN')">
-            <svg class="wa-ico" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Reservar este paquete
-          </button>
-        </div>
-        <div class="pkg ka star">
-          <div class="star-badge">⭐ Más solicitado</div>
-          <div class="pkg-name">Completo</div>
-          <div class="pkg-price">$1,400</div>
-          <div class="pkg-dur">MXN · hasta 5 horas</div>
-          <ul class="pkg-feats">
-            <li>Proyector 4K 1,100 Ansi Lm</li>
-            <li>Pantalla 100&quot; con tripie</li>
-            <li>2 Micrófonos inalámbricos</li>
-            <li>Pedestal profesional</li>
-            <li>Instalación, prueba en vivo y desmontaje</li>
-            <li>Soporte WhatsApp durante el evento</li>
-          </ul>
-          <button class="btn-pkg" onclick="waRapido('ka','Completo','$1,400 MXN')">
-            <svg class="wa-ico" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Reservar este paquete
-          </button>
-        </div>
-        <div class="pkg ka">
-          <div class="pkg-name">Premium Noche</div>
-          <div class="pkg-price">$1,800</div>
-          <div class="pkg-dur">MXN · hasta 8 horas</div>
-          <ul class="pkg-feats">
-            <li>Todo del paquete Completo</li>
-            <li>Pantalla 100&quot; toda la noche</li>
-            <li>Hasta 8 horas de evento</li>
-            <li>Hora extra disponible: $200 MXN</li>
-            <li>Prioridad en agenda de fin de semana</li>
-          </ul>
-          <button class="btn-pkg" onclick="waRapido('ka','Premium Noche','$1,800 MXN')">
-            <svg class="wa-ico" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Reservar este paquete
-          </button>
-        </div>
-      </div>
-    </div>
+<!-- ─────────────────────────────────────────
+   JAVASCRIPT
+───────────────────────────────────────── -->
+<script>
+  /* ── THEME SWITCHER ── */
+  let currentTheme = null;
 
-    <!-- PANEL CINE -->
-    <div class="panel" id="pci">
-      <div class="panel-bar">
-        <span class="panel-ico">🎬</span>
-        <div>
-          <div class="panel-name">Cine &amp; Pijamadas Infantiles</div>
-          <div class="panel-caption">Smart Google TV integrado · Netflix, Disney+, YouTube listo para usar</div>
-        </div>
-      </div>
-      <div class="pkgs">
-        <div class="pkg ci">
-          <div class="pkg-name">Infantil Básico</div>
-          <div class="pkg-price">$800</div>
-          <div class="pkg-dur">MXN · hasta 3 horas</div>
-          <ul class="pkg-feats">
-            <li>Proyector 4K con Smart Google TV</li>
-            <li>Pantalla 70&quot; con tripie</li>
-            <li>Audio integrado al proyector</li>
-            <li>Netflix, Disney+, YouTube listo</li>
-            <li>Instalación y desmontaje</li>
-          </ul>
-          <button class="btn-pkg" onclick="waRapido('ci','Infantil Básico','$800 MXN')">
-            <svg class="wa-ico" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Reservar este paquete
-          </button>
-        </div>
-        <div class="pkg ci star">
-          <div class="star-badge">⭐ Más pedido</div>
-          <div class="pkg-name">Cine Completo</div>
-          <div class="pkg-price">$1,000</div>
-          <div class="pkg-dur">MXN · hasta 4 horas</div>
-          <ul class="pkg-feats">
-            <li>Proyector 4K con Smart Google TV</li>
-            <li>Pantalla 100&quot; con tripie</li>
-            <li>Audio integrado + pedestal</li>
-            <li>Netflix, Disney+, YouTube listo</li>
-            <li>Instalación y desmontaje</li>
-          </ul>
-          <button class="btn-pkg" onclick="waRapido('ci','Cine Completo','$1,000 MXN')">
-            <svg class="wa-ico" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Reservar este paquete
-          </button>
-        </div>
-        <div class="pkg ci">
-          <div class="pkg-name">Pijamada (noche)</div>
-          <div class="pkg-price">$1,200</div>
-          <div class="pkg-dur">MXN · hasta 6 horas</div>
-          <ul class="pkg-feats">
-            <li>Todo del Cine Completo</li>
-            <li>Instalación nocturna</li>
-            <li>Recogida al día siguiente</li>
-            <li>Hasta 6h de proyección</li>
-            <li>Hora extra: $150 MXN</li>
-          </ul>
-          <button class="btn-pkg" onclick="waRapido('ci','Pijamada','$1,200 MXN')">
-            <svg class="wa-ico" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Reservar este paquete
-          </button>
-        </div>
-      </div>
-    </div>
+  function setTheme(theme) {
+    currentTheme = theme;
+    document.body.classList.remove('theme-fam', 'theme-corp');
+    document.body.classList.add('theme-' + theme);
 
-    <!-- PANEL CORPORATIVO -->
-    <div class="panel" id="pco">
-      <div class="panel-bar">
-        <span class="panel-ico">📊</span>
-        <div>
-          <div class="panel-name">Presentaciones &amp; Desayunos de Negocio</div>
-          <div class="panel-caption">Puntualidad garantizada · Factura electrónica disponible · Imagen corporativa</div>
-        </div>
-      </div>
-      <div class="pkgs">
-        <div class="pkg co">
-          <div class="pkg-name">Presentación Básica</div>
-          <div class="pkg-price">$1,500</div>
-          <div class="pkg-dur">MXN · hasta 3 horas</div>
-          <ul class="pkg-feats">
-            <li>Proyector 4K 1,100 Ansi Lm</li>
-            <li>Pantalla 100&quot; con tripie</li>
-            <li>1 Micrófono inalámbrico</li>
-            <li>Instalación y prueba de PPT</li>
-            <li>Factura electrónica disponible</li>
-          </ul>
-          <button class="btn-pkg" onclick="waRapido('co','Presentación Básica','$1,500 MXN')">
-            <svg class="wa-ico" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Solicitar cotización
-          </button>
-        </div>
-        <div class="pkg co star">
-          <div class="star-badge">💼 Recomendado</div>
-          <div class="pkg-name">Desayuno de Negocio</div>
-          <div class="pkg-price">$2,000</div>
-          <div class="pkg-dur">MXN · hasta 4 horas</div>
-          <ul class="pkg-feats">
-            <li>Proyector 4K 1,100 Ansi Lm</li>
-            <li>Pantalla 100&quot; con tripie</li>
-            <li>2 Micrófonos inalámbricos</li>
-            <li>Pedestal profesional</li>
-            <li>Llegada 45 min antes del evento</li>
-            <li>Prueba en vivo de presentación</li>
-            <li>Factura electrónica incluida</li>
-          </ul>
-          <button class="btn-pkg" onclick="waRapido('co','Desayuno de Negocio','$2,000 MXN')">
-            <svg class="wa-ico" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Solicitar cotización
-          </button>
-        </div>
-        <div class="pkg co">
-          <div class="pkg-name">Evento Premium</div>
-          <div class="pkg-price">$2,800</div>
-          <div class="pkg-dur">MXN · hasta 5 horas</div>
-          <ul class="pkg-feats">
-            <li>Todo del Desayuno de Negocio</li>
-            <li>Puntero láser presenter incluido</li>
-            <li>Apoyo técnico en los 30 min iniciales</li>
-            <li>Hora extra: $300 MXN</li>
-            <li>Factura electrónica incluida</li>
-          </ul>
-          <button class="btn-pkg" onclick="waRapido('co','Evento Premium','$2,800 MXN')">
-            <svg class="wa-ico" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Solicitar cotización
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    // Show/hide relevant package options in select
+    document.querySelectorAll('.fam-opt').forEach(o => o.style.display = theme === 'fam' ? '' : 'none');
+    document.querySelectorAll('.corp-opt').forEach(o => o.style.display = theme === 'corp' ? '' : 'none');
 
-<!-- FORMULARIO -->
-<section id="formulario">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto 48px;">
-      <div class="sec-kicker" style="justify-content:center;">Cotización en 2 minutos</div>
-      <h2 class="sec-title" style="color:var(--white);">Cuéntanos de tu evento</h2>
-      <p class="sec-sub" style="color:rgba(255,255,255,.35);margin:14px auto 0;">Llena los datos y te generamos el mensaje listo para WhatsApp. Te respondemos en menos de 1 hora.</p>
-    </div>
-    <div class="form-wrap reveal">
-      <div class="form-note">Vista previa del mensaje antes de enviar</div>
-      <div class="fg2">
-        <div class="fg">
-          <label class="flabel">Tipo de evento</label>
-          <select class="fctrl" id="fTipo" onchange="updatePreview()">
-            <option value="">Selecciona...</option>
-            <option value="Karaoke / Fiesta adultos">🎤 Karaoke / Fiesta adultos</option>
-            <option value="Cine infantil / Pijamada">🎬 Cine infantil / Pijamada</option>
-            <option value="Presentación de negocio">📊 Presentación de negocio</option>
-            <option value="Desayuno corporativo">💼 Desayuno corporativo</option>
-          </select>
-        </div>
-        <div class="fg">
-          <label class="flabel">Paquete de interés</label>
-          <select class="fctrl" id="fPaq" onchange="updatePreview()">
-            <option value="">Selecciona...</option>
-            <option value="Básico ($1,000)">Básico — $1,000 MXN</option>
-            <option value="Completo ($1,400)">Completo — $1,400 MXN</option>
-            <option value="Premium Noche ($1,800)">Premium Noche — $1,800 MXN</option>
-            <option value="Infantil Básico ($800)">Infantil Básico — $800 MXN</option>
-            <option value="Cine Completo ($1,000)">Cine Completo — $1,000 MXN</option>
-            <option value="Pijamada ($1,200)">Pijamada — $1,200 MXN</option>
-            <option value="Presentación Básica ($1,500)">Presentación Básica — $1,500 MXN</option>
-            <option value="Desayuno de Negocio ($2,000)">Desayuno de Negocio — $2,000 MXN</option>
-            <option value="Evento Premium ($2,800)">Evento Premium — $2,800 MXN</option>
-          </select>
-        </div>
-        <div class="fg">
-          <label class="flabel">Fecha del evento</label>
-          <input type="date" class="fctrl" id="fFecha" onchange="updatePreview()">
-        </div>
-        <div class="fg">
-          <label class="flabel">Horario estimado</label>
-          <input type="text" class="fctrl" id="fHora" placeholder="Ej: 7:00 PM – 11:00 PM" oninput="updatePreview()">
-        </div>
-        <div class="fg">
-          <label class="flabel">Número de personas</label>
-          <select class="fctrl" id="fPers" onchange="updatePreview()">
-            <option value="">Selecciona...</option>
-            <option>5–15 personas</option>
-            <option>15–30 personas</option>
-            <option>30–50 personas</option>
-            <option>Más de 50 personas</option>
-          </select>
-        </div>
-        <div class="fg">
-          <label class="flabel">¿Requiere factura?</label>
-          <select class="fctrl" id="fFact" onchange="updatePreview()">
-            <option value="No">No necesito factura</option>
-            <option value="Sí, CFDI">Sí, necesito factura CFDI</option>
-          </select>
-        </div>
-      </div>
-      <div class="fg1 fg">
-        <label class="flabel">Colonia / Dirección aproximada</label>
-        <input type="text" class="fctrl" id="fDir" placeholder="Ej: Temozón Norte, Mérida" oninput="updatePreview()">
-      </div>
-      <div class="preview-box">
-        <div class="preview-label">📱 Mensaje que se enviará a LUMIK</div>
-        <div id="prevTxt">Completa los campos para ver el mensaje generado...</div>
-      </div>
-      <button class="btn-wa-main" onclick="enviarForm()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enviar a WhatsApp y reservar
-      </button>
-    </div>
-  </div>
-</section>
+    // Hide intro, show main
+    document.getElementById('intro').classList.add('hidden');
+    const main = document.getElementById('main-page');
+    main.classList.add('visible');
 
-<!-- CÓMO FUNCIONA -->
-<section id="como">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:520px;margin:0 auto;">
-      <div class="sec-kicker" style="justify-content:center;">Sin complicaciones</div>
-      <h2 class="sec-title">Así funciona LUMIK</h2>
-    </div>
-    <div class="steps reveal">
-      <div class="step">
-        <div class="step-circle">1</div>
-        <div class="step-t">Elige y reserva</div>
-        <div class="step-d">Selecciona tu paquete y confirma con pago por transferencia o Mercado Pago. Todo en menos de 5 minutos.</div>
-      </div>
-      <div class="step">
-        <div class="step-circle">2</div>
-        <div class="step-t">Nosotros instalamos</div>
-        <div class="step-d">Llegamos antes de tu evento, armamos el proyector, la pantalla y los micrófonos. Probamos que todo funcione antes de retirarnos.</div>
-      </div>
-      <div class="step">
-        <div class="step-circle">3</div>
-        <div class="step-t">Tú disfrutas</div>
-        <div class="step-d">Tu evento, tu diversión. Al terminar regresamos a desmontar todo. Depósito devuelto en menos de 2 horas si el equipo está en buen estado.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALES -->
-<section id="testi">
-  <div class="container">
-    <div class="reveal">
-      <div class="sec-kicker">Clientes reales</div>
-      <h2 class="sec-title">Lo que dicen quienes<br>ya lo vivieron</h2>
-    </div>
-    <div class="testi-grid reveal">
-      <div class="tcard">
-        <div class="stars">★★★★★</div>
-        <div class="ttext">"La fiesta de cumpleaños de mi esposo fue espectacular. La pantalla de 100 pulgadas en el jardín impresionó a todos. Llegaron antes del horario, instalaron todo y cuando menos lo esperamos el karaoke ya estaba listo."</div>
-        <div class="tauthor">María G.</div>
-        <div class="trole">Cumpleaños adultos · Temozón Norte</div>
-      </div>
-      <div class="tcard blue">
-        <div class="stars">★★★★★</div>
-        <div class="ttext">"La pijamada de mi hija fue un éxito total. Las niñas vieron dos películas Disney en pantalla enorme. El proceso fue súper sencillo, firmé el contrato por WhatsApp y listo. Sin complicaciones."</div>
-        <div class="tauthor">Claudia R.</div>
-        <div class="trole">Pijamada infantil · Montebello</div>
-      </div>
-      <div class="tcard green">
-        <div class="stars">★★★★★</div>
-        <div class="ttext">"Usamos el equipo para la presentación de nuestro producto a un grupo de asesores. El proyector es nítido, los micrófonos funcionaron perfecto y nos emitieron factura al día siguiente. Muy profesionales."</div>
-        <div class="tauthor">Ing. Roberto M.</div>
-        <div class="trole">Desayuno corporativo · Altabrisa</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:520px;margin:0 auto 48px;">
-      <div class="sec-kicker" style="justify-content:center;color:var(--gold);">Preguntas frecuentes</div>
-      <h2 class="sec-title">Todo lo que<br>necesitas saber</h2>
-    </div>
-    <div class="faq-wrap reveal">
-      <div class="fitem">
-        <button class="fq" onclick="toggleFaq(this)">¿Cubren toda la ciudad de Mérida?<span class="ficon">+</span></button>
-        <div class="fa-txt">Cubrimos la zona norte sin cargo adicional: Altabrisa, Temozón, Montebello, Chuburná, Santa Fe y colonias cercanas. Eventos en otras zonas tienen un cargo de $150 MXN por traslado.</div>
-      </div>
-      <div class="fitem">
-        <button class="fq" onclick="toggleFaq(this)">¿Qué pasa si algo falla durante el evento?<span class="ficon">+</span></button>
-        <div class="fa-txt">Tienes nuestro número de WhatsApp disponible durante todo el evento. Si el fallo es del equipo y no tiene solución, devolvemos el pago completo. Siempre probamos todo antes de retirarnos.</div>
-      </div>
-      <div class="fitem">
-        <button class="fq" onclick="toggleFaq(this)">¿Emiten factura electrónica?<span class="ficon">+</span></button>
-        <div class="fa-txt">Sí, disponible para todos los paquetes. Necesitamos tu RFC y datos fiscales con mínimo 24 horas de anticipación. No tiene costo adicional.</div>
-      </div>
-      <div class="fitem">
-        <button class="fq" onclick="toggleFaq(this)">¿Con cuánta anticipación debo reservar?<span class="ficon">+</span></button>
-        <div class="fa-txt">Para fines de semana, mínimo 3–5 días antes. Entre semana con 24–48 horas es suficiente. Los fines de semana tienen alta demanda y no garantizamos disponibilidad de último minuto.</div>
-      </div>
-      <div class="fitem">
-        <button class="fq" onclick="toggleFaq(this)">¿Cuánto es el depósito de garantía?<span class="ficon">+</span></button>
-        <div class="fa-txt">$500 MXN para eventos sociales e infantiles. $800 MXN para eventos corporativos. Se devuelve por transferencia en máximo 2 horas después de recoger el equipo en buen estado.</div>
-      </div>
-      <div class="fitem">
-        <button class="fq" onclick="toggleFaq(this)">¿Aceptan efectivo?<span class="ficon">+</span></button>
-        <div class="fa-txt">Aceptamos transferencia bancaria y Mercado Pago. Para eventos corporativos solo transferencia con comprobante. No entregamos el equipo sin pago confirmado previo.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section id="cta">
-  <div class="container">
-    <h2>¿Listo para hacer<br><em>memorable</em> tu evento?</h2>
-    <p>Disponibilidad limitada los fines de semana. Reserva con anticipación.</p>
-    <div class="cta-row">
-      <a href="#formulario" class="btn-gold" style="font-size:15px;padding:17px 36px;">Cotizar ahora — gratis</a>
-      <a href="https://wa.me/5219992171955?text=Hola%20LUMIK%2C%20me%20interesa%20rentar%20equipo%20para%20un%20evento." class="btn-outline-w" style="color:rgba(255,255,255,.55);">O escríbenos directo →</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="flogo">LU<span>MIK</span></div>
-  <div style="display:flex;flex-direction:column;gap:6px;align-items:center;">
-    <p>Renta de equipo audiovisual · Mérida Norte, Yucatán</p>
-    <a href="/cdn-cgi/l/email-protection#2f464149406f435a424644014257" style="display:inline-flex;align-items:center;gap:7px;color:var(--gold);font-size:13px;text-decoration:none;opacity:.85;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.85">
-      <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 7l10 7 10-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <span class="__cf_email__" data-cfemail="7811161e1738140d151113561500">[email&#160;protected]</span>
-    </a>
-  </div>
-  <p>© 2026 LUMIK · Todos los derechos reservados</p>
-</footer>
-
-<!-- FLOAT WA -->
-<a class="float-wa" href="https://wa.me/5219992171955?text=Hola%20LUMIK%2C%20me%20interesa%20su%20servicio%20de%20renta%20de%20equipo." target="_blank">
-  <svg width="27" height="27" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const WA = "5219992171955"; // ← CAMBIAR POR TU NÚMERO REAL (52 + 10 dígitos)
-
-  const NICHOS = {
-    ka: "Karaoke / Evento Privado",
-    ci: "Cine Infantil / Pijamada",
-    co: "Presentación Corporativa / Desayuno de Negocio"
-  };
-
-  // ── Selector de nichos ──
-  function showPanel(id) {
-    document.querySelectorAll('.nicho-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-    document.querySelector('.nicho-btn.' + id).classList.add('active');
-    const panel = document.getElementById('p' + id);
-    panel.classList.add('active');
-    setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+    // Kick off scroll reveal
+    setTimeout(initReveal, 400);
   }
 
-  // ── Botón rápido desde paquete ──
-  function waRapido(nicho, paq, precio) {
-    const msg = `Hola LUMIK 👋\n\nMe interesa el siguiente paquete:\n\n📌 Evento: ${NICHOS[nicho]}\n📦 Paquete: ${paq}\n💰 Precio: ${precio}\n\n¿Tienen disponibilidad? Me gustaría confirmar fecha y detalles.`;
-    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank');
+  function showIntro() {
+    document.getElementById('main-page').classList.remove('visible');
+    document.getElementById('intro').classList.remove('hidden');
+    window.scrollTo(0, 0);
   }
 
-  // ── Formulario inteligente ──
-  function updatePreview() {
-    const tipo  = document.getElementById('fTipo').value;
-    const paq   = document.getElementById('fPaq').value;
-    const fecha = document.getElementById('fFecha').value;
-    const hora  = document.getElementById('fHora').value;
-    const pers  = document.getElementById('fPers').value;
-    const fact  = document.getElementById('fFact').value;
-    const dir   = document.getElementById('fDir').value;
-    const fFmt  = fecha ? new Date(fecha+'T12:00:00').toLocaleDateString('es-MX',{weekday:'long',year:'numeric',month:'long',day:'numeric'}) : '[fecha pendiente]';
-    document.getElementById('prevTxt').innerText =
-`Hola LUMIK 👋
-
-Quiero cotizar / reservar para mi evento:
-
-📌 Tipo: ${tipo||'[por seleccionar]'}
-📦 Paquete: ${paq||'[por seleccionar]'}
-📅 Fecha: ${fFmt}
-🕐 Horario: ${hora||'[por definir]'}
-👥 Personas: ${pers||'[por definir]'}
-📍 Lugar: ${dir||'[por definir]'}
-🧾 Factura: ${fact||'No'}
-
-¿Tienen disponibilidad? Estoy listo para confirmar.`;
+  /* ── PACKAGE SELECTION ── */
+  function selectPackage(pkg) {
+    document.getElementById('f-paquete').value = pkg;
+    document.getElementById('reservar').scrollIntoView({ behavior: 'smooth' });
   }
 
-  function enviarForm() {
-    const tipo  = document.getElementById('fTipo').value;
-    const paq   = document.getElementById('fPaq').value;
-    const fecha = document.getElementById('fFecha').value;
-    if (!tipo || !paq || !fecha) { alert('Por favor completa: tipo de evento, paquete y fecha.'); return; }
-    const hora = document.getElementById('fHora').value;
-    const pers = document.getElementById('fPers').value;
-    const fact = document.getElementById('fFact').value;
-    const dir  = document.getElementById('fDir').value;
-    const fFmt = new Date(fecha+'T12:00:00').toLocaleDateString('es-MX',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-    const msg  = `Hola LUMIK 👋\n\nQuiero reservar equipo:\n\n📌 Tipo: ${tipo}\n📦 Paquete: ${paq}\n📅 Fecha: ${fFmt}\n🕐 Horario: ${hora||'Por definir'}\n👥 Personas: ${pers||'Por definir'}\n📍 Lugar: ${dir||'Por definir'}\n🧾 Factura: ${fact}\n\n¿Tienen disponibilidad? Estoy listo para pagar y confirmar.`;
-    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank');
+  /* ── ADDON CHIPS ── */
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => chip.classList.toggle('active'));
+  });
+
+  /* ── FORM SUBMIT ── */
+  document.getElementById('reserva-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nombre  = document.getElementById('f-nombre').value.trim();
+    const tel     = document.getElementById('f-tel').value.trim();
+    const email   = document.getElementById('f-email').value.trim();
+    const fecha   = document.getElementById('f-fecha').value;
+    const paquete = document.getElementById('f-paquete').value;
+    const dir     = document.getElementById('f-dir').value.trim();
+    const notas   = document.getElementById('f-notas').value.trim();
+
+    const activeChips = [...document.querySelectorAll('.chip.active')].map(c => c.dataset.val).join(', ');
+
+    const msg = `*Nueva Solicitud Lumik* 🎬%0A%0A`
+      + `*Nombre:* ${encodeURIComponent(nombre)}%0A`
+      + `*Teléfono:* ${encodeURIComponent(tel)}%0A`
+      + `*Email:* ${encodeURIComponent(email)}%0A`
+      + `*Fecha:* ${encodeURIComponent(fecha)}%0A`
+      + `*Paquete:* ${encodeURIComponent(paquete)}%0A`
+      + `*Dirección:* ${encodeURIComponent(dir)}%0A`
+      + `*Adicionales:* ${encodeURIComponent(activeChips || 'Ninguno')}%0A`
+      + `*Notas:* ${encodeURIComponent(notas || 'Sin notas')}`;
+
+    // Open WhatsApp
+    window.open(`https://wa.me/529992171955?text=${msg}`, '_blank');
+
+    // Also try to open email (as mailto fallback)
+    const emailBody = `Nueva Solicitud Lumik\n\nNombre: ${nombre}\nTeléfono: ${tel}\nEmail: ${email}\nFecha: ${fecha}\nPaquete: ${paquete}\nDirección: ${dir}\nAdicionales: ${activeChips || 'Ninguno'}\nNotas: ${notas || 'Sin notas'}`;
+    // mailto link as secondary
+    const mailLink = `mailto:info@lumik.mx?subject=Solicitud%20de%20Reserva%20Lumik&body=${encodeURIComponent(emailBody)}`;
+    setTimeout(() => { window.location.href = mailLink; }, 1500);
+
+    // Show success
+    document.getElementById('reserva-form').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+  });
+
+  /* ── SCROLL REVEAL ── */
+  function initReveal() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      // Only observe visible elements (theme-matched)
+      if (el.offsetParent !== null || el.closest('.section-full')) {
+        observer.observe(el);
+      }
+    });
   }
 
-  // ── FAQ ──
-  function toggleFaq(btn) {
-    const item = btn.parentElement;
-    const open = item.classList.contains('open');
-    document.querySelectorAll('.fitem').forEach(i => i.classList.remove('open'));
-    if (!open) item.classList.add('open');
-  }
-
-  // ── Reveal on scroll �
+  /* ── SET MIN DATE TO TODAY ── */
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('f-fecha').setAttribute('min', today);
+</script>
+</body>
+</html>
