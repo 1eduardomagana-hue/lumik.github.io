@@ -374,7 +374,99 @@ footer{background:#030303;border-top:1px solid var(--g60);padding:2.5rem 1.5rem 
   .use-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
   .hero-h1{letter-spacing:-1.5px}
 }
-@media(max-width:420px){
+@media(max-width:420px){/* FIX MOBILE INTRO — LUMIK */
+html,
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#intro {
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  padding: calc(18px + env(safe-area-inset-top)) 1rem calc(36px + env(safe-area-inset-bottom));
+}
+
+.intro-top {
+  margin-bottom: 1rem;
+  gap: .25rem;
+  flex-shrink: 0;
+}
+
+.intro-logo-svg {
+  width: 40px;
+  height: 40px;
+}
+
+.intro-wm {
+  font-size: 2.6rem;
+  letter-spacing: -2px;
+}
+
+.intro-slogan {
+  font-size: .56rem;
+  letter-spacing: .18em;
+}
+
+.intro-headline {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin-bottom: .25rem;
+}
+
+.intro-sub {
+  font-size: .86rem;
+  margin-bottom: 1.1rem;
+}
+
+.selector-row {
+  width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.sel-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  border-radius: 28px;
+  padding: 1.55rem 1.35rem 1.35rem;
+  gap: .55rem;
+}
+
+.sel-title {
+  font-size: 2.25rem;
+  line-height: 1.02;
+}
+
+.sel-promise {
+  font-size: .95rem;
+  line-height: 1.45;
+}
+
+.sel-uses {
+  gap: .36rem;
+}
+
+.sel-uses li {
+  font-size: .9rem;
+  line-height: 1.35;
+}
+
+.sel-btn {
+  margin-top: .55rem;
+  min-height: 54px;
+  font-size: .95rem;
+  padding: .8rem 1rem;
+}
   .trust-grid{grid-template-columns:1fr}
   .hero-cards{flex-direction:column}
   .hcard,.hcard-wa{max-width:100%}
