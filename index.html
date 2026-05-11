@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Lumik | Proyector y pantalla en Mérida — Presentaciones y experiencias privadas</title>
+<meta name="description" content="Renta de proyector, pantalla y equipo audiovisual en Mérida. Para presentaciones ejecutivas, cine en casa y eventos privados. Instalación incluida."/>
+<meta property="og:title" content="Lumik | Proyector y pantalla en Mérida"/>
+<meta property="og:description" content="Equipo audiovisual premium para presentaciones ejecutivas y experiencias privadas en Mérida, Yucatán."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://lumik.mx"/>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+// fbq('init', 'TU_PIXEL_ID'); // ← Descomentar e insertar ID
+// fbq('track', 'PageView');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ex-bg:#04090f;--ex-mid:#060f1a;--ex-acc:#3b8beb;--ex-acc2:#5fa3ff;
+  --ex-glow:rgba(59,139,235,.12);--ex-border:rgba(59,139,235,.18);
+  --xp-bg:#0c0800;--xp-mid:#130e02;--xp-acc:#e8a020;--xp-acc2:#f5c050;
+  --xp-glow:rgba(232,160,32,.12);--xp-border:rgba(232,160,32,.18);
+  --black:#060606;--white:#ffffff;
+  --g40:rgba(255,255,255,.04);--g60:rgba(255,255,255,.06);--g80:rgba(255,255,255,.08);
+  --g120:rgba(255,255,255,.12);--g200:rgba(255,255,255,.20);--g400:rgba(255,255,255,.40);
+  --g550:rgba(255,255,255,.55);--g700:rgba(255,255,255,.70);
+  --r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-pill:999px;
+  --ease:cubic-bezier(.4,0,.2,1);--t:.28s;
+}
+body.tf{--acc:var(--xp-acc);--acc2:var(--xp-acc2);--bg:var(--xp-bg);--mid:var(--xp-mid);--glow:var(--xp-glow);--ba:var(--xp-border)}
+body.tc{--acc:var(--ex-acc);--acc2:var(--ex-acc2);--bg:var(--ex-bg);--mid:var(--ex-mid);--glow:var(--ex-glow);--ba:var(--ex-border)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+body{font-family:'Outfit',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font-family:inherit}
+img{max-width:100%;display:block}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-thumb{background:var(--g120);border-radius:10px}
+.tf-only,.tc-only{display:none!important}
+body.tf .tf-only{display:block!important}body.tc .tc-only{display:block!important}
+.tf-flex,.tc-flex{display:none!important}
+body.tf .tf-flex{display:flex!important}body.tc .tc-flex{display:flex!important}
+.tf-grid,.tc-grid{display:none!important}
+body.tf .tf-grid{display:grid!important}body.tc .tc-grid{display:grid!important}
+.logo-defs{display:none}
+#intro{position:fixed;inset:0;z-index:2000;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#060606;transition:opacity .7s var(--ease),visibility .7s var(--ease);padding:1.5rem;overflow:hidden}
+#intro::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 50% at 30% 20%,rgba(59,139,235,.07) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 70% 80%,rgba(232,160,32,.06) 0%,transparent 60%)}
+#intro.out{opacity:0;visibility:hidden;pointer-events:none}
+.intro-top{display:flex;flex-direction:column;align-items:center;gap:.4rem;margin-bottom:2rem;position:relative;z-index:1}
+.intro-logo-svg{width:52px;height:52px;animation:glow-pulse 3s ease-in-out infinite}
+@keyframes glow-pulse{0%,100%{filter:drop-shadow(0 0 8px rgba(232,160,32,.3))}50%{filter:drop-shadow(0 0 20px rgba(59,139,235,.45))}}
+.intro-wm{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,8vw,4rem);font-weight:700;letter-spacing:-3px;line-height:1;background:linear-gradient(135deg,#e8a020 0%,#e05020 45%,#3b8beb 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.intro-slogan{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--g400);font-weight:500}
+.intro-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.8vw,1.3rem);font-weight:400;font-style:italic;color:var(--g550);text-align:center;max-width:360px;line-height:1.45;margin-bottom:.35rem;position:relative;z-index:1}
+.intro-sub{font-size:.78rem;color:var(--g400);text-align:center;margin-bottom:2rem;position:relative;z-index:1}
+.selector-row{display:flex;gap:.85rem;flex-wrap:wrap;justify-content:center;width:100%;max-width:620px;position:relative;z-index:1}
+.sel-card{flex:1;min-width:210px;max-width:290px;border-radius:var(--r-xl);padding:1.8rem 1.4rem 1.6rem;border:1px solid var(--g80);display:flex;flex-direction:column;align-items:flex-start;gap:.65rem;cursor:pointer;background:var(--g40);position:relative;overflow:hidden;transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease),border-color var(--t)}
+.sel-card::after{content:'';position:absolute;inset:0;border-radius:inherit;opacity:0;transition:opacity var(--t)}
+.sel-card.corp::after{background:radial-gradient(circle at 60% 0%,rgba(59,139,235,.1),transparent 65%)}
+.sel-card.fam::after{background:radial-gradient(circle at 60% 0%,rgba(232,160,32,.1),transparent 65%)}
+.sel-card:hover{transform:translateY(-5px)}
+.sel-card.corp:hover{border-color:rgba(59,139,235,.35);box-shadow:0 20px 50px rgba(59,139,235,.12)}
+.sel-card.fam:hover{border-color:rgba(232,160,32,.35);box-shadow:0 20px 50px rgba(232,160,32,.12)}
+.sel-card:hover::after{opacity:1}
+.sel-tag{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.22rem .65rem;border-radius:var(--r-pill);position:relative;z-index:1}
+.sel-card.corp .sel-tag{background:rgba(59,139,235,.12);color:#5fa3ff;border:1px solid rgba(59,139,235,.22)}
+.sel-card.fam .sel-tag{background:rgba(232,160,32,.12);color:#e8a020;border:1px solid rgba(232,160,32,.22)}
+.sel-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;line-height:1.1;position:relative;z-index:1}
+.sel-promise{font-size:.8rem;color:var(--g400);line-height:1.6;position:relative;z-index:1}
+.sel-uses{list-style:none;display:flex;flex-direction:column;gap:.28rem;position:relative;z-index:1}
+.sel-uses li{font-size:.76rem;color:var(--g550);display:flex;align-items:center;gap:.4rem}
+.sel-uses li::before{content:'';width:3px;height:3px;border-radius:50%;background:currentColor;flex-shrink:0}
+.sel-btn{margin-top:.35rem;width:100%;padding:.62rem 1rem;border-radius:var(--r-pill);font-size:.8rem;font-weight:700;border:none;cursor:pointer;transition:filter var(--t),transform var(--t);position:relative;z-index:1}
+.sel-card.corp .sel-btn{background:#3b8beb;color:#fff}
+.sel-card.fam .sel-btn{background:#e8a020;color:#0c0800}
+.sel-btn:active{transform:scale(.97)}
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:590;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.cart-overlay.on{opacity:1;visibility:visible}
+#cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(380px,100vw);background:#0a0a0a;border-left:1px solid var(--g80);z-index:600;transform:translateX(105%);transition:transform .38s var(--ease);display:flex;flex-direction:column}
+#cart-drawer.open{transform:translateX(0)}
+.cart-header{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 1.5rem;border-bottom:1px solid var(--g60)}
+.cart-header h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700}
+.cart-close{background:none;border:none;color:var(--g400);font-size:1.4rem;cursor:pointer;line-height:1;transition:color var(--t)}
+.cart-close:hover{color:var(--white)}
+.cart-items{flex:1;overflow-y:auto;padding:.9rem 1.5rem;display:flex;flex-direction:column;gap:.6rem}
+.cart-empty{text-align:center;color:var(--g400);padding:2.5rem 1rem;font-size:.85rem;line-height:1.7}
+.cart-item{background:var(--g40);border:1px solid var(--g60);border-radius:var(--r-md);padding:.85rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+.ci-info{flex:1}
+.ci-name{font-size:.85rem;font-weight:600;margin-bottom:.08rem}
+.ci-price{font-weight:700;font-size:.78rem;color:var(--acc,#e8a020)}
+.ci-remove{background:none;border:none;color:var(--g400);font-size:.95rem;cursor:pointer;transition:color var(--t)}
+.ci-remove:hover{color:#e55}
+.cart-footer{padding:1.3rem 1.5rem;border-top:1px solid var(--g60)}
+.cart-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.9rem}
+.cart-total span:first-child{font-size:.8rem;color:var(--g400)}
+.cart-total-amount{font-weight:800;font-size:1.4rem;color:var(--acc,#e8a020)}
+.cart-note{font-size:.68rem;color:var(--g400);margin-bottom:.9rem;line-height:1.55}
+.cart-checkout-btn{width:100%;padding:.85rem;border-radius:var(--r-pill);background:var(--acc,#e8a020);color:#111;font-size:.9rem;font-weight:700;border:none;cursor:pointer;transition:filter var(--t),transform var(--t)}
+.cart-checkout-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:800;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.modal-bg.on{opacity:1;visibility:visible}
+.modal-box{background:#0f0f0f;border:1px solid var(--g80);border-radius:var(--r-xl);max-width:600px;width:100%;max-height:88vh;overflow-y:auto;padding:2rem 1.8rem;position:relative}
+.modal-close{position:absolute;top:1rem;right:1.2rem;background:none;border:none;color:var(--g400);font-size:1.4rem;cursor:pointer;transition:color var(--t)}
+.modal-close:hover{color:var(--white)}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;margin-bottom:.3rem}
+.modal-date{font-size:.72rem;color:var(--g400);margin-bottom:1.5rem}
+.modal-box h4{font-size:.88rem;font-weight:700;color:var(--acc,#e8a020);margin:1.2rem 0 .35rem}
+.modal-box p,.modal-box li{font-size:.8rem;color:var(--g550);line-height:1.8}
+.modal-box ul{margin-left:1rem;margin-top:.25rem}
+.modal-box li{margin-bottom:.22rem}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.5rem;background:rgba(6,6,6,.9);backdrop-filter:blur(18px);border-bottom:1px solid var(--g60)}
+.nav-brand{display:flex;align-items:center;gap:.5rem}
+.nav-logo-svg{width:26px;height:26px;flex-shrink:0}
+.nav-wm{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;letter-spacing:-1px;background:linear-gradient(135deg,#e8a020 0%,#e05020 45%,#3b8beb 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;align-items:center;gap:1.4rem}
+.nav-links a{font-size:.8rem;font-weight:500;color:var(--g400);transition:color var(--t)}
+.nav-links a:hover{color:var(--acc,#e8a020)}
+.nav-right{display:flex;align-items:center;gap:.5rem}
+.nav-back{display:flex;align-items:center;gap:.3rem;background:transparent;border:1px solid var(--g120);color:var(--g550);padding:.38rem .85rem;border-radius:var(--r-pill);font-size:.72rem;font-weight:600;cursor:pointer;transition:border-color var(--t),color var(--t)}
+.nav-back:hover{border-color:var(--g200);color:var(--white)}
+.cart-bubble{background:var(--g60);border:1px solid var(--g120);border-radius:var(--r-pill);padding:.38rem .85rem;font-size:.75rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:.35rem;transition:border-color var(--t);color:var(--white)}
+.cart-bubble:hover{border-color:var(--acc,#e8a020)}
+.cart-count{background:var(--acc,#e8a020);color:#111;font-size:.58rem;font-weight:800;border-radius:50%;width:15px;height:15px;display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.cart-count.bump{transform:scale(1.5)}
+.nav-cta{background:var(--acc,#e8a020);color:#111;padding:.42rem 1rem;border-radius:var(--r-pill);font-size:.8rem;font-weight:700;border:none;cursor:pointer;transition:filter var(--t),transform var(--t)}
+.nav-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+#hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:var(--bg,#0c0800);padding:6rem 1.5rem 4.5rem}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px)}
+.hero-orb-a{width:min(480px,85vw);height:min(480px,85vw);top:-18%;right:-12%;background:var(--glow,rgba(232,160,32,.1))}
+.hero-orb-b{width:min(320px,65vw);height:min(320px,65vw);bottom:-12%;left:-8%;background:var(--glow,rgba(232,160,32,.07))}
+.hero-grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 75% 75% at 50% 50%,black 10%,transparent 75%)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.4rem;background:var(--g60);border:1px solid var(--g120);border-radius:var(--r-pill);padding:.28rem .85rem;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g550);margin-bottom:1.6rem;position:relative;z-index:1;animation:fd .6s var(--ease) both}
+.hero-dot{width:5px;height:5px;border-radius:50%;background:var(--acc,#e8a020)}
+@keyframes fd{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,8.5vw,5.8rem);font-weight:700;line-height:.98;letter-spacing:-2.5px;max-width:740px;position:relative;z-index:1;animation:fu .8s var(--ease) .1s both}
+.hero-h1 em{font-style:italic;color:var(--acc,#e8a020)}
+.hero-sub{font-size:clamp(.88rem,2vw,1.05rem);font-weight:300;color:var(--g550);max-width:460px;line-height:1.7;margin-top:1.2rem;position:relative;z-index:1;animation:fu .8s var(--ease) .22s both}
+.hero-cards{display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;width:100%;max-width:680px;position:relative;z-index:1;animation:fu .8s var(--ease) .35s both}
+.hcard{flex:1;min-width:190px;max-width:310px;border-radius:var(--r-lg);padding:1.2rem 1.3rem;border:1px solid var(--g80);text-align:left;background:var(--g40);display:block;transition:transform var(--t),border-color var(--t),box-shadow var(--t)}
+.hcard.exec{border-color:rgba(59,139,235,.18)}
+.hcard.expr{border-color:rgba(232,160,32,.18)}
+.hcard.exec:hover{transform:translateY(-4px);border-color:rgba(59,139,235,.4);box-shadow:0 14px 35px rgba(59,139,235,.1)}
+.hcard.expr:hover{transform:translateY(-4px);border-color:rgba(232,160,32,.4);box-shadow:0 14px 35px rgba(232,160,32,.1)}
+.hcard-tag{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.18rem .6rem;border-radius:var(--r-pill);display:inline-block;margin-bottom:.55rem}
+.hcard.exec .hcard-tag{background:rgba(59,139,235,.1);color:#5fa3ff}
+.hcard.expr .hcard-tag{background:rgba(232,160,32,.1);color:#e8a020}
+.hcard-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;margin-bottom:.3rem}
+.hcard-list{list-style:none;display:flex;flex-direction:column;gap:.22rem}
+.hcard-list li{font-size:.73rem;color:var(--g400);display:flex;align-items:center;gap:.38rem}
+.hcard-list li::before{content:'';width:3px;height:3px;border-radius:50%;flex-shrink:0}
+.hcard.exec .hcard-list li::before{background:#5fa3ff}
+.hcard.expr .hcard-list li::before{background:#e8a020}
+.hcard-btn{margin-top:.8rem;display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;font-weight:700;padding:.42rem .85rem;border-radius:var(--r-pill);border:none;cursor:pointer;transition:filter var(--t)}
+.hcard.exec .hcard-btn{background:#3b8beb;color:#fff}
+.hcard.expr .hcard-btn{background:#e8a020;color:#0c0800}
+.hcard-btn:hover{filter:brightness(1.1)}
+.hcard-wa{flex:1;min-width:190px;max-width:310px;border-radius:var(--r-lg);padding:1.2rem 1.3rem;border:1px solid rgba(37,211,102,.18);background:var(--g40);text-align:left;transition:transform var(--t),border-color var(--t);display:block;text-decoration:none}
+.hcard-wa:hover{transform:translateY(-4px);border-color:rgba(37,211,102,.38)}
+.hero-stats{display:flex;gap:1.8rem;flex-wrap:wrap;justify-content:center;margin-top:2.2rem;position:relative;z-index:1;animation:fu .8s var(--ease) .5s both}
+.stat{text-align:center}
+.stat-n{font-weight:800;font-size:1.3rem;color:var(--acc,#e8a020);line-height:1}
+.stat-l{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--g400);margin-top:.18rem}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.sec{padding:4.5rem 0}
+.sec-dark{background:#050505}
+.sec-mid{background:var(--mid,#0f0f0f)}
+.sec-head{max-width:580px;margin-bottom:2.8rem}
+.stag{font-size:.65rem;letter-spacing:.22em;font-weight:700;text-transform:uppercase;color:var(--acc,#e8a020);margin-bottom:.65rem;display:block}
+.sttl{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;line-height:1.08;letter-spacing:-1px;margin-bottom:.7rem}
+.ssub{font-size:.88rem;color:var(--g400);max-width:460px;line-height:1.75}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.reveal.on{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.05s}.d2{transition-delay:.10s}.d3{transition-delay:.15s}.d4{transition-delay:.20s}
+.eq-promise{background:var(--g40);border:1px solid var(--g80);border-radius:var(--r-lg);padding:1.1rem 1.5rem;margin-bottom:2.2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.eq-promise-text{font-size:.85rem;color:var(--g550);line-height:1.6}
+.eq-promise-text strong{color:var(--white);font-weight:600}
+.eq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:1.1rem}
+.eq-card{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--g80);background:var(--g40);transition:transform var(--t),border-color var(--t),box-shadow var(--t);display:flex;flex-direction:column}
+.eq-card:hover{transform:translateY(-4px);border-color:var(--ba,rgba(232,160,32,.2));box-shadow:0 18px 45px rgba(0,0,0,.5)}
+.eq-img{aspect-ratio:4/3;position:relative;overflow:hidden;background:#0a0a0a}
+.eq-img-cinema{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem}
+.eq-img-cinema::before{content:'';position:absolute;inset:0;background:linear-gradient(110deg,rgba(255,255,255,.0) 30%,rgba(255,255,255,.04) 50%,rgba(255,255,255,.0) 70%);background-size:200% 100%;animation:shimmer 2.2s ease-in-out infinite}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.eq-frame{width:60px;height:42px;border:1.5px solid rgba(255,255,255,.1);border-radius:6px;position:relative;z-index:1;display:flex;align-items:center;justify-content:center}
+.eq-frame::before{content:'';width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.14)}
+.eq-img-name{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.18);position:relative;z-index:1;font-weight:600}
+.eq-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.5),transparent)}
+.eq-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.eq-info{padding:1.1rem 1.2rem 1.3rem;flex:1}
+.eq-name{font-weight:700;font-size:.9rem;margin-bottom:.3rem}
+.eq-benefit{font-size:.76rem;color:var(--g400);line-height:1.6}
+.eq-badge{display:inline-block;margin-top:.55rem;background:var(--g40);border:1px solid var(--g60);border-radius:var(--r-pill);padding:.12rem .55rem;font-size:.62rem;font-weight:600;color:var(--acc,#e8a020)}
+.steps-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:.9rem;margin-top:2.5rem}
+.step{text-align:center;padding:1.8rem 1.3rem;background:var(--g40);border:1px solid var(--g60);border-radius:var(--r-lg);transition:border-color var(--t),transform var(--t)}
+.step:hover{border-color:var(--ba,rgba(232,160,32,.18));transform:translateY(-3px)}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--g60);border:1px solid var(--g120);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--acc,#e8a020);margin:0 auto .9rem}
+.step-title{font-weight:700;font-size:.88rem;margin-bottom:.4rem}
+.step-desc{font-size:.76rem;color:var(--g400);line-height:1.65}
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.2rem;margin-top:2.2rem}
+.pkg{background:var(--g40);border:1.5px solid var(--g80);border-radius:var(--r-xl);padding:2rem 1.7rem;position:relative;display:flex;flex-direction:column;transition:transform var(--t),border-color var(--t),box-shadow var(--t)}
+.pkg:hover{transform:translateY(-4px);border-color:var(--ba);box-shadow:0 20px 55px rgba(0,0,0,.45)}
+.pkg.feat{border-color:var(--ba);background:linear-gradient(150deg,var(--g60),var(--g40))}
+.pkg-star{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--acc,#e8a020);color:#111;font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .85rem;border-radius:var(--r-pill);white-space:nowrap}
+.pkg-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;margin-bottom:.12rem}
+.pkg-tagline{font-size:.78rem;color:var(--g400);margin-bottom:1rem}
+.pkg-pricing{margin-bottom:1.2rem}
+.pkg-price{font-weight:800;font-size:2.1rem;color:var(--acc,#e8a020);line-height:1}
+.pkg-period{font-size:.75rem;color:var(--g400);margin-left:.18rem}
+.pkg-timing{margin-top:.35rem;font-size:.72rem;color:var(--g400);display:flex;align-items:center;gap:.35rem}
+.pkg-timing::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--acc,#e8a020);flex-shrink:0}
+.pkg-list{list-style:none;flex:1;display:flex;flex-direction:column;gap:.48rem;margin-bottom:1.5rem}
+.pkg-list li{font-size:.8rem;color:var(--g550);display:flex;gap:.45rem;align-items:flex-start}
+.pkg-list li::before{content:'✦';color:var(--acc,#e8a020);flex-shrink:0;font-size:.58rem;margin-top:.22rem}
+.pkg-btns{display:flex;flex-direction:column;gap:.55rem}
+.pkg-cart-btn{width:100%;padding:.72rem;border-radius:var(--r-pill);font-weight:700;font-size:.82rem;border:1.5px solid var(--acc,#e8a020);background:transparent;color:var(--acc,#e8a020);cursor:pointer;transition:background var(--t),color var(--t),transform var(--t);display:flex;align-items:center;justify-content:center;gap:.38rem}
+.pkg-cart-btn:hover{background:var(--acc,#e8a020);color:#111;transform:scale(1.02)}
+.pkg-reserve-btn{width:100%;padding:.72rem;border-radius:var(--r-pill);font-weight:600;font-size:.82rem;border:none;background:var(--g60);color:var(--g550);cursor:pointer;transition:background var(--t),color var(--t)}
+.pkg-reserve-btn:hover{background:var(--g120);color:var(--white)}
+.pkg-ext-note{margin-top:1rem;padding:.7rem 1rem;background:var(--g40);border:1px solid var(--g60);border-radius:var(--r-md);font-size:.72rem;color:var(--g400);line-height:1.55}
+.pkg-ext-note strong{color:var(--g550)}
+.pkg-custom{margin-top:1.3rem;text-align:center;background:var(--g40);border:1px solid var(--g80);border-radius:var(--r-lg);padding:1.4rem 1.8rem}
+.pkg-custom-title{font-weight:700;font-size:.92rem;margin-bottom:.25rem}
+.pkg-custom-sub{font-size:.78rem;color:var(--g400);margin-bottom:.9rem}
+.pkg-custom-btn{display:inline-flex;align-items:center;gap:.45rem;background:#25D366;color:#fff;padding:.6rem 1.4rem;border-radius:var(--r-pill);font-size:.82rem;font-weight:700;transition:filter var(--t),transform var(--t)}
+.pkg-custom-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.addon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:.9rem;margin-top:2.2rem}
+.addon{background:var(--g40);border:1px solid var(--g60);border-radius:var(--r-lg);padding:1.2rem 1rem;transition:border-color var(--t),transform var(--t);position:relative}
+.addon:hover{transform:translateY(-3px);border-color:var(--g120)}
+.addon.sel{border-color:var(--acc,#e8a020);background:var(--g60)}
+.addon.sel::after{content:'✓';position:absolute;top:8px;right:10px;color:var(--acc,#e8a020);font-weight:800;font-size:.78rem}
+.addon-label{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g400);margin-bottom:.4rem;display:block}
+.addon-name{font-weight:700;font-size:.85rem;margin-bottom:.18rem}
+.addon-price{font-weight:700;font-size:.78rem;color:var(--acc,#e8a020)}
+.addon-txt{font-size:.7rem;color:var(--g400);margin-top:.18rem;line-height:1.5}
+.addon-btn{margin-top:.65rem;width:100%;padding:.38rem;border-radius:var(--r-pill);font-size:.7rem;font-weight:700;border:1px solid var(--g120);background:transparent;color:var(--g550);cursor:pointer;transition:border-color var(--t),background var(--t),color var(--t)}
+.addon-btn:hover{border-color:var(--acc,#e8a020);background:var(--acc,#e8a020);color:#111}
+.use-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.9rem;margin-top:2.2rem}
+.use-card{border-radius:var(--r-lg);padding:1.3rem 1.1rem;border:1px solid var(--g60);background:var(--g40);transition:transform var(--t),border-color var(--t);text-align:center}
+.use-card:hover{transform:translateY(-3px);border-color:var(--ba)}
+.use-icon-wrap{width:36px;height:36px;margin:0 auto .6rem;border-radius:var(--r-sm);background:var(--g60);border:1px solid var(--g80);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.use-title{font-weight:700;font-size:.8rem;margin-bottom:.18rem}
+.use-desc{font-size:.7rem;color:var(--g400);line-height:1.5}
+.gallery-tabs{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:1.3rem}
+.gtab{padding:.35rem .95rem;border-radius:var(--r-pill);border:1px solid var(--g120);background:transparent;color:var(--g400);font-size:.75rem;font-weight:600;cursor:pointer;transition:background var(--t),border-color var(--t),color var(--t)}
+.gtab.on{background:var(--acc,#e8a020);color:#111;border-color:var(--acc,#e8a020)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-top:1.6rem}
+.gcard{border-radius:var(--r-lg);overflow:hidden;position:relative;aspect-ratio:4/3;background:var(--g40);border:1px solid var(--g60);transition:transform var(--t),box-shadow var(--t)}
+.gcard:hover{transform:scale(1.015);box-shadow:0 14px 38px rgba(0,0,0,.55)}
+.gcard-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;position:relative;background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.01))}
+.gcard-placeholder::before{content:'';position:absolute;inset:0;background:linear-gradient(110deg,rgba(255,255,255,.0) 30%,rgba(255,255,255,.03) 50%,rgba(255,255,255,.0) 70%);background-size:200% 100%;animation:shimmer 2.5s ease-in-out infinite}
+.gcard-ph-frame{width:50px;height:36px;border:1.5px solid rgba(255,255,255,.1);border-radius:5px;position:relative;z-index:1}
+.gcard-ph-label{font-size:.6rem;color:rgba(255,255,255,.2);letter-spacing:.1em;text-transform:uppercase;position:relative;z-index:1}
+.gcard-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);opacity:0;transition:opacity var(--t);display:flex;align-items:flex-end;padding:1rem}
+.gcard:hover .gcard-overlay{opacity:1}
+.gcard-caption{font-size:.8rem;font-weight:600;color:var(--white);line-height:1.35}
+.gallery-note{margin-top:1.8rem;padding:1.2rem;background:var(--g40);border-radius:var(--r-lg);border:1px dashed var(--g80);text-align:center}
+.gallery-note p{font-size:.78rem;color:var(--g400);line-height:1.7}
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:.9rem;margin-top:2.2rem}
+.trust-item{background:var(--g40);border:1px solid var(--g60);border-radius:var(--r-lg);padding:1.3rem 1.1rem;display:flex;align-items:flex-start;gap:.7rem}
+.trust-icon{width:30px;height:30px;border-radius:var(--r-sm);background:var(--g60);border:1px solid var(--g80);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;margin-top:.05rem}
+.trust-title{font-weight:700;font-size:.82rem;margin-bottom:.18rem}
+.trust-desc{font-size:.73rem;color:var(--g400);line-height:1.55}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem;margin-top:2.2rem}
+.rv{background:var(--g40);border:1px solid var(--g60);border-radius:var(--r-xl);padding:1.6rem 1.5rem;transition:border-color var(--t),transform var(--t)}
+.rv:hover{border-color:var(--g120);transform:translateY(-3px)}
+.rv-stars{color:#e8a020;font-size:.9rem;letter-spacing:.08em;margin-bottom:.7rem}
+.rv-text{font-size:.85rem;color:var(--g550);line-height:1.75;margin-bottom:1.1rem;font-style:italic}
+.rv-author{display:flex;align-items:center;gap:.65rem}
+.rv-avatar{width:36px;height:36px;border-radius:50%;background:var(--acc,#e8a020);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.88rem;color:#111;flex-shrink:0}
+.rv-name{font-weight:700;font-size:.82rem}
+.rv-event{font-size:.7rem;color:var(--g400);margin-top:.06rem}
+.rv-form-wrap{margin-top:2.5rem;background:var(--g40);border:1px solid var(--g80);border-radius:var(--r-xl);padding:2rem 1.7rem;max-width:520px}
+.rv-form-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;margin-bottom:.25rem}
+.rv-form-sub{font-size:.8rem;color:var(--g400);margin-bottom:1.3rem;line-height:1.6}
+.star-picker{display:flex;gap:.22rem;margin-bottom:.9rem}
+.star-btn{background:none;border:none;font-size:1.4rem;cursor:pointer;opacity:.28;transition:opacity .13s,transform .13s;filter:grayscale(1)}
+.star-btn.lit{opacity:1;filter:none;transform:scale(1.08)}
+.rv-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.rv-fg{display:flex;flex-direction:column;gap:.28rem}
+.rv-fg.full{grid-column:1/-1}
+.rv-fg label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g400)}
+.rv-fg input,.rv-fg select,.rv-fg textarea{background:var(--g60);border:1px solid var(--g120);border-radius:var(--r-sm);padding:.62rem .88rem;color:var(--white);font-size:.86rem;outline:none;transition:border-color var(--t);-webkit-appearance:none}
+.rv-fg input:focus,.rv-fg select:focus,.rv-fg textarea:focus{border-color:var(--acc,#e8a020)}
+.rv-fg select option{background:#111}
+.rv-fg textarea{resize:vertical;min-height:82px}
+.rv-submit{width:100%;padding:.75rem;margin-top:.85rem;border-radius:var(--r-pill);background:var(--acc,#e8a020);color:#111;font-size:.88rem;font-weight:700;border:none;cursor:pointer;transition:filter var(--t),transform var(--t)}
+.rv-submit:hover{filter:brightness(1.08);transform:translateY(-1px)}
+#rv-success{display:none;text-align:center;padding:1.8rem;color:var(--g550);font-size:.88rem;line-height:1.7}
+.cond-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.9rem;margin-top:2.2rem}
+.cond-card{background:var(--g40);border:1px solid var(--g60);border-radius:var(--r-lg);padding:1.4rem 1.2rem}
+.cond-icon{font-size:1.3rem;margin-bottom:.45rem}
+.cond-title{font-weight:700;font-size:.85rem;margin-bottom:.35rem;color:var(--acc,#e8a020)}
+.cond-txt{font-size:.76rem;color:var(--g400);line-height:1.7}
+.form-shell{background:var(--g40);border:1px solid var(--g80);border-radius:var(--r-xl);padding:2.2rem 2rem;max-width:640px;margin:2.2rem auto 0}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.fg{display:flex;flex-direction:column;gap:.28rem}
+.fg.full{grid-column:1/-1}
+.fg label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g400)}
+.fg input,.fg select,.fg textarea{background:var(--g60);border:1px solid var(--g120);border-radius:var(--r-sm);padding:.7rem .95rem;color:var(--white);font-size:.88rem;outline:none;transition:border-color var(--t);-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--acc,#e8a020)}
+.fg select option{background:#111}
+.fg textarea{resize:vertical;min-height:88px}
+.chips-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.4rem}
+.chip{border:1px solid var(--g120);border-radius:var(--r-pill);padding:.25rem .75rem;font-size:.72rem;cursor:pointer;transition:all var(--t);user-select:none;color:var(--g550)}
+.chip.on{background:var(--acc,#e8a020);color:#111;border-color:var(--acc,#e8a020);font-weight:700}
+.cart-summary-box{background:var(--g40);border:1px solid var(--g80);border-radius:var(--r-md);padding:1rem 1.2rem;margin-bottom:1rem}
+.csb-title{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--g400);margin-bottom:.65rem}
+.csb-items{display:flex;flex-direction:column;gap:.32rem}
+.csb-item{display:flex;justify-content:space-between;font-size:.8rem;color:var(--g550)}
+.csb-item .price{font-weight:700;color:var(--acc,#e8a020)}
+.csb-total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--g80);margin-top:.65rem;padding-top:.65rem}
+.csb-total span{font-size:.72rem;color:var(--g400)}
+.csb-total-amt{font-weight:800;font-size:1.15rem;color:var(--acc,#e8a020)}
+.lead-status{font-size:.7rem;color:var(--g400);text-align:center;margin-top:.5rem;min-height:1.2rem;transition:color .3s}
+.lead-status.ok{color:#25D366}
+.sub-btn{width:100%;padding:.9rem;border-radius:var(--r-pill);background:var(--acc,#e8a020);color:#111;font-size:.92rem;font-weight:700;border:none;cursor:pointer;transition:filter var(--t),transform var(--t);display:flex;align-items:center;justify-content:center;gap:.48rem;margin-top:.9rem}
+.sub-btn:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.form-fn{text-align:center;font-size:.7rem;color:var(--g400);margin-top:.75rem;line-height:1.6}
+#form-success{display:none;text-align:center;padding:2.2rem 1rem}
+#form-success .big-ico{font-size:2.8rem;margin-bottom:.65rem}
+#form-success h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin-bottom:.55rem}
+#form-success p{font-size:.85rem;color:var(--g400);max-width:340px;margin:0 auto;line-height:1.75}
+.contact-row{display:flex;gap:1.3rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem}
+.ci{display:flex;align-items:center;gap:.5rem;color:var(--g550);font-size:.85rem;transition:color var(--t)}
+.ci:hover{color:var(--acc,#e8a020)}
+.ci .ico{font-size:1rem}
+.final-cta{padding:5rem 1.5rem;text-align:center;background:var(--bg,#0c0800);position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 50% 50%,var(--glow,rgba(232,160,32,.1)) 0%,transparent 70%)}
+.final-cta-q{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;line-height:1.08;letter-spacing:-1.5px;max-width:660px;margin:0 auto .9rem;position:relative;z-index:1}
+.final-cta-sub{font-size:clamp(.85rem,2vw,1rem);color:var(--g400);max-width:420px;margin:0 auto 1.8rem;line-height:1.7;position:relative;z-index:1}
+.wa-btn-lg{display:inline-flex;align-items:center;gap:.65rem;background:#25D366;color:#fff;padding:.95rem 2.2rem;border-radius:var(--r-pill);font-weight:700;font-size:1rem;transition:filter var(--t),transform var(--t);position:relative;z-index:1}
+.wa-btn-lg:hover{filter:brightness(1.08);transform:translateY(-3px);box-shadow:0 18px 45px rgba(37,211,102,.28)}
+footer{background:#030303;border-top:1px solid var(--g60);padding:2.5rem 1.5rem 1.8rem;text-align:center}
+.footer-brand{display:flex;align-items:center;justify-content:center;gap:.45rem;margin-bottom:.28rem}
+.footer-logo-svg{width:22px;height:22px}
+.footer-wm{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;background:linear-gradient(135deg,#e8a020 0%,#e05020 45%,#3b8beb 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer-slogan{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:1.3rem}
+.footer-links{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-bottom:.9rem}
+.footer-links a{font-size:.72rem;color:rgba(255,255,255,.25);transition:color var(--t)}
+.footer-links a:hover{color:var(--acc,#e8a020)}
+.footer-copy{font-size:.67rem;color:rgba(255,255,255,.16)}
+.wa-sticky{position:fixed;bottom:1.3rem;right:1.3rem;z-index:400;display:flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;padding:.65rem 1.1rem;border-radius:var(--r-pill);font-size:.8rem;font-weight:700;box-shadow:0 6px 25px rgba(37,211,102,.32);transition:filter var(--t),transform var(--t),opacity .4s;cursor:pointer;border:none;opacity:0}
+.wa-sticky:hover{filter:brightness(1.08);transform:translateY(-2px)}
+@media(max-width:768px){
+  nav{padding:.75rem 1rem}
+  .nav-links{display:none}
+  .nav-wm{font-size:1.35rem}
+  .nav-right{gap:.38rem}
+  .nav-back .txt{display:none}
+  #hero{padding:5.5rem 1.2rem 4rem}
+  .hero-cards{gap:.7rem}
+  .hcard,.hcard-wa{min-width:155px}
+  .hero-stats{gap:1.1rem}
+  .stat-n{font-size:1.1rem}
+  .form-grid{grid-template-columns:1fr}
+  .fg.full{grid-column:1}
+  .form-shell{padding:1.7rem 1.2rem}
+  .pkg-grid{grid-template-columns:1fr}
+  .eq-grid{grid-template-columns:repeat(auto-fill,minmax(155px,1fr))}
+  .steps-row{grid-template-columns:1fr}
+  .selector-row{flex-direction:column;align-items:center}
+  .sel-card{max-width:100%;width:100%}
+  .rv-form-grid{grid-template-columns:1fr}
+  .rv-fg.full{grid-column:1}
+  .modal-box{padding:1.7rem 1.1rem}
+  .rv-form-wrap{padding:1.7rem 1.1rem}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .use-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+  .hero-h1{letter-spacing:-1.5px}
+}
+@media(max-width:420px){
+  .trust-grid{grid-template-columns:1fr}
+  .hero-cards{flex-direction:column}
+  .hcard,.hcard-wa{max-width:100%}
+}
+</style>
+</head>
+<body>
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8a020"/>
+      <stop offset="45%" stop-color="#e05020"/>
+      <stop offset="100%" stop-color="#3b8beb"/>
+    </linearGradient>
+  </defs>
+  <symbol id="lumik-logo" viewBox="0 0 64 64">
+    <circle cx="20" cy="32" r="11" fill="none" stroke="url(#lg)" stroke-width="2.5"/>
+    <circle cx="20" cy="32" r="4.5" fill="url(#lg)" opacity=".9"/>
+    <path d="M30 26 L57 14" stroke="url(#lg)" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M30 32 L61 32" stroke="url(#lg)" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M30 38 L57 50" stroke="url(#lg)" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <circle cx="57" cy="14" r="2.2" fill="url(#lg)" opacity=".55"/>
+    <circle cx="61" cy="32" r="2.8" fill="url(#lg)" opacity=".85"/>
+    <circle cx="57" cy="50" r="2.2" fill="url(#lg)" opacity=".55"/>
+  </symbol>
+</svg>
+
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+
+<div id="cart-drawer">
+  <div class="cart-header">
+    <h3>Tu selección</h3>
+    <button class="cart-close" onclick="closeCart()">×</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty">Aún no has agregado nada.<br>Elige un paquete o adicional.</div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total estimado</span>
+      <span class="cart-total-amount" id="cart-total-display">$0</span>
+    </div>
+    <p class="cart-note">* Precio final se confirma al reservar. Incluye instalación.</p>
+    <button class="cart-checkout-btn" onclick="goToCheckout()">Ir a reservar con este resumen →</button>
+  </div>
+</div>
+
+<div class="modal-bg" id="privacy-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('privacy-modal')">×</button>
+    <p class="modal-title">Aviso de Privacidad</p>
+    <p class="modal-date">Última actualización: Enero 2025 · Lumik, Mérida, Yucatán</p>
+    <h4>Responsable</h4>
+    <p>Lumik, con domicilio en Mérida, Yucatán, México. Tratamiento conforme a la LFPDPPP.</p>
+    <h4>Datos que recabamos</h4>
+    <p>Nombre, teléfono, correo electrónico, dirección del evento e información adicional proporcionada voluntariamente.</p>
+    <h4>Finalidad</h4>
+    <ul>
+      <li>Procesar y confirmar solicitudes de renta.</li>
+      <li>Enviar confirmaciones y actualizaciones del servicio.</li>
+      <li>Mejorar nuestros servicios.</li>
+    </ul>
+    <h4>Derechos ARCO</h4>
+    <p>Escríbenos a <strong>info@lumik.mx</strong> con el asunto "Derechos ARCO".</p>
+    <h4>Contacto</h4>
+    <p><strong>info@lumik.mx</strong> · (999) 217-1955</p>
+  </div>
+</div>
+
+<div class="modal-bg" id="terms-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('terms-modal')">×</button>
+    <p class="modal-title">Condiciones del Servicio</p>
+    <p class="modal-date">Lumik · Mérida, Yucatán</p>
+    <h4>Depósito de Garantía</h4>
+    <p>50% al confirmar reserva. El saldo restante al momento de la instalación. El depósito es reembolsable si cancelas con más de 72 hrs de anticipación.</p>
+    <h4>Instalación y Retiro</h4>
+    <p>Lumik instala y retira el equipo. El cliente garantiza acceso en los horarios acordados. Tiempo estimado de instalación: 30–45 min.</p>
+    <h4>Uso del Equipo</h4>
+    <ul>
+      <li>No exponer a lluvia o humedad sin autorización previa.</li>
+      <li>No trasladar a domicilio distinto al acordado.</li>
+      <li>El cliente es responsable del equipo durante la renta.</li>
+    </ul>
+    <h4>Daños</h4>
+    <p>Daños por mal uso: el cliente cubre reparación o reposición. Inspección al momento del retiro.</p>
+    <h4>Cancelaciones</h4>
+    <ul>
+      <li>Más de 72 hrs: reembolso 100%.</li>
+      <li>24–72 hrs: reembolso 50%.</li>
+      <li>Menos de 24 hrs: sin reembolso.</li>
+    </ul>
+    <h4>Extensión de Cobertura</h4>
+    <p>Tiempo adicional: $500 MXN/hr. Debe solicitarse con mínimo 1 hr de anticipación.</p>
+    <h4>Contacto</h4>
+    <p><strong>info@lumik.mx</strong> · (999) 217-1955 · Mérida, Yucatán</p>
+  </div>
+</div>
+
+<div id="intro">
+  <div class="intro-top">
+    <svg class="intro-logo-svg"><use href="#lumik-logo"/></svg>
+    <div class="intro-wm">lumik</div>
+    <div class="intro-slogan">Proyecta momentos que importan</div>
+  </div>
+  <p class="intro-headline">Renta de proyector, pantalla y equipo audiovisual en Mérida.</p>
+  <p class="intro-sub">¿Qué tipo de evento tienes en mente?</p>
+  <div class="selector-row">
+    <div class="sel-card corp" onclick="setTheme('c')">
+      <span class="sel-tag">Lumik Executive</span>
+      <div class="sel-title">Presentación<br>ejecutiva</div>
+      <p class="sel-promise">Tu junta o presentación se ve profesional desde el primer minuto.</p>
+      <ul class="sel-uses">
+        <li>Juntas de negocio y capacitaciones</li>
+        <li>Lanzamientos y workshops</li>
+        <li>Presentaciones inmobiliarias</li>
+        <li>Despachos, agencias, empresas</li>
+      </ul>
+      <button class="sel-btn">Cotizar presentación →</button>
+    </div>
+    <div class="sel-card fam" onclick="setTheme('f')">
+      <span class="sel-tag">Lumik Experience</span>
+      <div class="sel-title">Experiencia<br>privada</div>
+      <p class="sel-promise">Convierte cualquier noche en algo que vale la pena recordar.</p>
+      <ul class="sel-uses">
+        <li>Cine en casa o al aire libre</li>
+        <li>Cumpleaños y reuniones privadas</li>
+        <li>Karaoke y noches con amigos</li>
+        <li>Terrazas, jardines y patios</li>
+      </ul>
+      <button class="sel-btn">Reservar experiencia →</button>
+    </div>
+  </div>
+</div>
+
+<div id="main" style="opacity:0;visibility:hidden">
+
+  <nav>
+    <div class="nav-brand">
+      <svg class="nav-logo-svg"><use href="#lumik-logo"/></svg>
+      <span class="nav-wm">lumik</span>
+    </div>
+    <div class="nav-links">
+      <a href="#equipo">Equipo</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#portafolio">Galería</a>
+      <a href="#reservar">Reservar</a>
+    </div>
+    <div class="nav-right">
+      <button class="cart-bubble" onclick="toggleCart()" id="cart-btn">☰ <span class="cart-count" id="cart-count">0</span></button>
+      <button class="nav-cta" onclick="goWA('Cotizar')">Cotizar →</button>
+      <button class="nav-back" onclick="backToIntro()">← <span class="txt">Inicio</span></button>
+    </div>
+  </nav>
+
+  <section id="hero" style="padding:0">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-a"></div>
+      <div class="hero-orb hero-orb-b"></div>
+      <div class="hero-grid-overlay"></div>
+    </div>
+    <div class="hero-eyebrow"><span class="hero-dot"></span>Mérida, Yucatán · Instalación incluida</div>
+    <h1 class="hero-h1 tc-only" style="display:none">Tu presentación<br><em>merece verse</em><br>profesional.</h1>
+    <h1 class="hero-h1 tf-only" style="display:none">Convierte<br><em>cualquier noche</em><br>en experiencia.</h1>
+    <p class="hero-sub tc-only" style="display:none">Equipo listo, imagen perfecta. Para juntas, capacitaciones y lanzamientos en Mérida.</p>
+    <p class="hero-sub tf-only" style="display:none">Pantalla grande, noche perfecta. Sin comprar equipo ni improvisar nada.</p>
+    <div class="hero-cards">
+      <a href="#paquetes" class="hcard exec tc-only" style="display:none">
+        <span class="hcard-tag">Executive</span>
+        <div class="hcard-title">Proyección ejecutiva</div>
+        <ul class="hcard-list"><li>Juntas y capacitaciones</li><li>Lanzamientos y workshops</li><li>Desde $1,490</li></ul>
+        <button class="hcard-btn">Ver paquetes →</button>
+      </a>
+      <a href="#paquetes" class="hcard expr tf-only" style="display:none">
+        <span class="hcard-tag">Experience</span>
+        <div class="hcard-title">Cine y experiencias</div>
+        <ul class="hcard-list"><li>Cine en casa o jardín</li><li>Cumpleaños y karaoke</li><li>Desde $1,199</li></ul>
+        <button class="hcard-btn">Ver paquetes →</button>
+      </a>
+      <a href="https://wa.me/529992171955?text=Hola%2C+quiero+cotizar+Lumik." target="_blank" class="hcard-wa" onclick="trackWA('hero')">
+        <span class="hcard-tag" style="background:rgba(37,211,102,.1);color:#25D366;border:1px solid rgba(37,211,102,.22)">WhatsApp</span>
+        <div class="hcard-title" style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;margin-bottom:.3rem">¿Tienes fecha?</div>
+        <ul class="hcard-list">
+          <li style="color:rgba(255,255,255,.4)">Respuesta en minutos</li>
+          <li style="color:rgba(255,255,255,.4)">Sin formularios</li>
+          <li style="color:rgba(255,255,255,.4)">Confirmamos al momento</li>
+        </ul>
+        <button class="hcard-btn" style="background:#25D366;color:#fff;margin-top:.8rem">Cotizar ahora →</button>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-n">100"</div><div class="stat-l">Pantalla incluida</div></div>
+      <div class="stat"><div class="stat-n">HD</div><div class="stat-l">Imagen nítida</div></div>
+      <div class="stat"><div class="stat-n">30 min</div><div class="stat-l">Instalación</div></div>
+      <div class="stat"><div class="stat-n">Mérida</div><div class="stat-l">Con instalación</div></div>
+    </div>
+  </section>
+
+  <div id="equipo" class="sec sec-dark">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="stag reveal">Lo que llega a tu evento</span>
+        <h2 class="sttl reveal">Equipo real.<br><span style="color:var(--acc)">Listo desde que llegamos.</span></h2>
+        <p class="ssub reveal">Antes de reservar, sabes exactamente qué estás recibiendo.</p>
+      </div>
+      <div class="eq-promise reveal">
+        <div class="eq-promise-text"><strong>No rentas specs técnicos. Rentas una experiencia que funciona.</strong> Todo llega probado, instalado y configurado. En ~30 minutos estás listo para empezar.</div>
+      </div>
+      <div class="eq-grid">
+        <div class="eq-card reveal d1">
+          <div class="eq-img">
+            <!-- IMAGEN REAL: <img src="/images/wanbo-x5.jpg" alt="Proyector Wanbo X5 Pro" loading="lazy"> -->
+            <div class="eq-img-cinema"><div class="eq-frame"></div><span class="eq-img-name">Proyector · wanbo-x5.jpg</span></div>
+          </div>
+          <div class="eq-info"><div class="eq-name">Proyector Wanbo X5 Pro</div><div class="eq-benefit">Imagen clara incluso con luces encendidas. No necesitas oscurecer el espacio.</div><span class="eq-badge">Todos los paquetes</span></div>
+        </div>
+        <div class="eq-card reveal d1">
+          <div class="eq-img">
+            <!-- IMAGEN REAL: <img src="/images/pantalla-100.jpg" alt="Pantalla 100 pulgadas" loading="lazy"> -->
+            <div class="eq-img-cinema"><div class="eq-frame" style="width:68px;height:46px"></div><span class="eq-img-name">Pantalla 100" · pantalla-100.jpg</span></div>
+          </div>
+          <div class="eq-info"><div class="eq-name">Pantalla 100" con trípode</div><div class="eq-benefit">Donde tú decides: sala, jardín, terraza o sala de juntas. Lista en minutos.</div><span class="eq-badge">Incluida</span></div>
+        </div>
+        <div class="eq-card reveal d2">
+          <div class="eq-img">
+            <!-- IMAGEN REAL: <img src="/images/pantalla-70.jpg" alt="Pantalla 70 pulgadas" loading="lazy"> -->
+            <div class="eq-img-cinema"><div class="eq-frame" style="width:52px;height:38px"></div><span class="eq-img-name">Pantalla 70" · pantalla-70.jpg</span></div>
+          </div>
+          <div class="eq-info"><div class="eq-name">Pantalla 70"</div><div class="eq-benefit">Para espacios compactos. Misma claridad, formato más íntimo.</div><span class="eq-badge">Bajo solicitud</span></div>
+        </div>
+        <div class="eq-card reveal d2">
+          <div class="eq-img">
+            <!-- IMAGEN REAL: <img src="/images/microfonos.jpg" alt="Micrófonos inalámbricos" loading="lazy"> -->
+            <div class="eq-img-cinema"><div class="eq-frame" style="width:28px;height:46px;border-radius:14px"></div><span class="eq-img-name">Micrófonos · microfonos.jpg</span></div>
+          </div>
+          <div class="eq-info"><div class="eq-name">Micrófonos inalámbricos</div><div class="eq-benefit">Para presentaciones, karaoke o dinámicas. Carga completa garantizada.</div><span class="eq-badge">Paquetes Premium+</span></div>
+        </div>
+        <div class="eq-card reveal d3">
+          <div class="eq-img">
+            <!-- IMAGEN REAL: <img src="/images/setup-experience.jpg" alt="Netflix y YouTube" loading="lazy"> -->
+            <div class="eq-img-cinema"><div class="eq-frame" style="width:56px;height:38px"></div><span class="eq-img-name">Streaming · setup-experience.jpg</span></div>
+          </div>
+          <div class="eq-info"><div class="eq-name">Netflix y YouTube listos</div><div class="eq-benefit">Google TV integrado. O conecta tu laptop — cables y adaptadores incluidos.</div><span class="eq-badge">Incluido</span></div>
+        </div>
+        <div class="eq-card reveal d3" style="opacity:.65">
+          <div class="eq-img" style="background:rgba(255,255,255,.02)">
+            <div class="eq-img-cinema"><div class="eq-frame" style="width:42px;height:42px;border-radius:50%"></div><span class="eq-img-name">Audio · próximamente</span></div>
+          </div>
+          <div class="eq-info"><div class="eq-name">Audio premium</div><div class="eq-benefit">Bocina dedicada disponible próximamente. Por ahora: audio externo bajo solicitud.</div><span class="eq-badge" style="color:rgba(255,255,255,.3);border-color:rgba(255,255,255,.08)">Próximamente</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec-mid">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="stag reveal">Sin complicaciones</span>
+        <h2 class="sttl reveal">Tres pasos.<br>Sin estrés.</h2>
+      </div>
+      <div class="steps-row">
+        <div class="step reveal d1"><div class="step-num">1</div><div class="step-title">Nos dices tu fecha y tipo de evento</div><div class="step-desc">WhatsApp o formulario. Te respondemos en menos de 2 horas con disponibilidad y precio final.</div></div>
+        <div class="step reveal d2"><div class="step-num">2</div><div class="step-title">Confirmas con 50% de anticipo</div><div class="step-desc">Transferencia o efectivo. Sin plataformas complicadas. Tu fecha queda apartada.</div></div>
+        <div class="step reveal d3"><div class="step-num">3</div><div class="step-title">Llegamos, montamos y te dejamos listo</div><div class="step-desc">~30 min de instalación. Probamos todo. Regresamos al final a retirar. Tú solo disfrutas.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="paquetes" class="sec sec-dark">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="stag reveal">Paquetes</span>
+        <h2 class="sttl reveal tc-only" style="display:none">Para tu<br><em style="color:var(--acc);font-style:italic">presentación ejecutiva</em></h2>
+        <h2 class="sttl reveal tf-only" style="display:none">Para tu<br><em style="color:var(--acc);font-style:italic">noche perfecta</em></h2>
+        <p class="ssub reveal">Instalación, montaje y retiro incluidos. Sin costos ocultos.</p>
+      </div>
+      <div class="pkg-grid tf-grid" id="pkgs-f" style="display:none">
+        <div class="pkg reveal d1">
+          <div class="pkg-name">Básico</div><div class="pkg-tagline">La noche que mereces</div>
+          <div class="pkg-pricing"><span class="pkg-price">$1,199</span><span class="pkg-period">una noche</span><div class="pkg-timing">Entrega por la tarde · Retiro al día siguiente</div></div>
+          <ul class="pkg-list"><li>Proyector — imagen clara con luces encendidas</li><li>Pantalla 100" donde tú decidas</li><li>Netflix y YouTube listos desde que llegamos</li><li>Instalación, prueba y retiro incluidos</li></ul>
+          <div class="pkg-btns"><button class="pkg-cart-btn" onclick="addToCart('Paquete Básico Experience',1199)">Agregar al resumen</button><button class="pkg-reserve-btn" onclick="quickReserve('Experience Básico — $1,199')">Reservar por WhatsApp →</button></div>
+        </div>
+        <div class="pkg feat reveal d2">
+          <div class="pkg-star">Más reservado</div>
+          <div class="pkg-name">Cine Premium</div><div class="pkg-tagline">La noche perfecta de película</div>
+          <div class="pkg-pricing"><span class="pkg-price">$1,699</span><span class="pkg-period">una noche</span><div class="pkg-timing">Entrega por la tarde · Retiro al día siguiente</div></div>
+          <ul class="pkg-list"><li>Todo lo del paquete Básico</li><li>1 micrófono inalámbrico incluido</li><li>Configuración personalizada para tu espacio</li><li>Soporte durante el evento por WhatsApp</li></ul>
+          <div class="pkg-btns"><button class="pkg-cart-btn" onclick="addToCart('Paquete Cine Premium',1699)">Agregar al resumen</button><button class="pkg-reserve-btn" onclick="quickReserve('Experience Premium — $1,699')">Reservar por WhatsApp →</button></div>
+        </div>
+        <div class="pkg reveal d3">
+          <div class="pkg-name">Fiesta Total</div><div class="pkg-tagline">Karaoke · Cine · Todo</div>
+          <div class="pkg-pricing"><span class="pkg-price">$2,490</span><span class="pkg-period">una noche</span><div class="pkg-timing">Entrega por la tarde · Retiro al día siguiente</div></div>
+          <ul class="pkg-list"><li>Todo lo del paquete Premium</li><li>2 micrófonos inalámbricos</li><li>Configuración karaoke incluida</li><li>Cobertura extendida hasta las 2 am</li></ul>
+          <div class="pkg-btns"><button class="pkg-cart-btn" onclick="addToCart('Paquete Fiesta Total',2490)">Agregar al resumen</button><button class="pkg-reserve-btn" onclick="quickReserve('Fiesta Total — $2,490')">Reservar por WhatsApp →</button></div>
+          <div class="pkg-ext-note">Extensión de cobertura: <strong>$500/hr</strong> adicional.</div>
+        </div>
+      </div>
+      <div class="pkg-grid tc-grid" id="pkgs-c" style="display:none">
+        <div class="pkg reveal d1">
+          <div class="pkg-name">Media Jornada</div><div class="pkg-tagline">Juntas y presentaciones</div>
+          <div class="pkg-pricing"><span class="pkg-price">$1,490</span><span class="pkg-period">medio día</span><div class="pkg-timing">Hasta 4 horas de cobertura</div></div>
+          <ul class="pkg-list"><li>Proyector — imagen nítida en cualquier espacio</li><li>Pantalla 100" o 70" según el espacio</li><li>HDMI y adaptadores para cualquier laptop</li><li>Instalación, prueba y retiro</li></ul>
+          <div class="pkg-btns"><button class="pkg-cart-btn" onclick="addToCart('Media Jornada Executive',1490)">Agregar al resumen</button><button class="pkg-reserve-btn" onclick="quickReserve('Executive Media Jornada — $1,490')">Cotizar por WhatsApp →</button></div>
+        </div>
+        <div class="pkg feat reveal d2">
+          <div class="pkg-star">Recomendado</div>
+          <div class="pkg-name">Jornada Completa</div><div class="pkg-tagline">Capacitaciones y lanzamientos</div>
+          <div class="pkg-pricing"><span class="pkg-price">$2,190</span><span class="pkg-period">día completo</span><div class="pkg-timing">Hasta 8 horas de cobertura</div></div>
+          <ul class="pkg-list"><li>Todo lo de Media Jornada</li><li>1 micrófono inalámbrico incluido</li><li>Técnico disponible durante el evento</li><li>Prueba previa al evento confirmada</li></ul>
+          <div class="pkg-btns"><button class="pkg-cart-btn" onclick="addToCart('Jornada Completa Executive',2190)">Agregar al resumen</button><button class="pkg-reserve-btn" onclick="quickReserve('Executive Jornada Completa — $2,190')">Cotizar por WhatsApp →</button></div>
+        </div>
+        <div class="pkg reveal d3">
+          <div class="pkg-name">Evento Especial</div><div class="pkg-tagline">Inauguraciones y lanzamientos grandes</div>
+          <div class="pkg-pricing"><span class="pkg-price">$3,500</span><span class="pkg-period">desde</span><div class="pkg-timing">Cobertura completa · A medida</div></div>
+          <ul class="pkg-list"><li>Todo lo de Jornada Completa</li><li>2 micrófonos inalámbricos</li><li>Coordinación previa al evento</li><li>Técnico presente todo el tiempo</li><li>Exterior disponible</li></ul>
+          <div class="pkg-btns"><button class="pkg-cart-btn" onclick="addToCart('Evento Especial Executive',3500)">Agregar al resumen</button><button class="pkg-reserve-btn" onclick="quickReserve('Executive Evento Especial — desde $3,500')">Cotizar por WhatsApp →</button></div>
+          <div class="pkg-ext-note">Extensión de cobertura: <strong>$500/hr</strong> adicional.</div>
+        </div>
+      </div>
+      <div class="pkg-custom">
+        <div class="pkg-custom-title">¿Necesitas algo diferente?</div>
+        <div class="pkg-custom-sub">Más horas, dos pantallas, equipo extra, fuera de Mérida — cotizamos a tu medida.</div>
+        <a href="https://wa.me/529992171955?text=Hola%2C+quiero+cotizar+un+paquete+a+medida." target="_blank" class="pkg-custom-btn" onclick="trackWA('custom-package')">Cotizar paquete a medida →</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="adicionales" class="sec sec-mid">
+    <div class="wrap">
+      <div class="sec-head"><span class="stag reveal">Adicionales</span><h2 class="sttl reveal">Personaliza tu renta</h2><p class="ssub reveal">Todo se suma automáticamente a tu resumen de cotización.</p></div>
+      <div class="addon-grid">
+        <div class="addon reveal d1"><span class="addon-label">Equipo</span><div class="addon-name">Micrófono extra</div><div class="addon-price">+$400 / unidad</div><div class="addon-txt">Inalámbrico, batería completa garantizada</div><button class="addon-btn" onclick="addToCart('Micrófono inalámbrico extra',400)">+ Agregar</button></div>
+        <div class="addon reveal d1"><span class="addon-label">Tiempo</span><div class="addon-name">Extensión de cobertura</div><div class="addon-price">+$500 / hora</div><div class="addon-txt">Solicitar con mínimo 1 hr de anticipación</div><button class="addon-btn" onclick="addToCart('Extensión de cobertura 1hr',500)">+ Agregar</button></div>
+        <div class="addon reveal d2"><span class="addon-label">Pantalla</span><div class="addon-name">Pantalla 70"</div><div class="addon-price">Cotizar</div><div class="addon-txt">Para espacios compactos o como segunda pantalla</div><button class="addon-btn" onclick="quickReserve('Pantalla 70 pulgadas adicional')">Consultar →</button></div>
+        <div class="addon reveal d2"><span class="addon-label">Audio</span><div class="addon-name">Audio externo</div><div class="addon-price">Bajo solicitud</div><div class="addon-txt">Bocina externa. Disponibilidad limitada</div><button class="addon-btn" onclick="quickReserve('Audio externo')">Consultar →</button></div>
+        <div class="addon reveal d3"><span class="addon-label">Zona</span><div class="addon-name">Fuera de Mérida</div><div class="addon-price">Cotizar</div><div class="addon-txt">Progreso, Valladolid, Motul y más</div><button class="addon-btn" onclick="quickReserve('Zona extendida fuera de Mérida')">Consultar →</button></div>
+        <div class="addon reveal d3"><span class="addon-label">Visibilidad</span><div class="addon-name">Autorización de fotos</div><div class="addon-price">Sin costo</div><div class="addon-txt">Lumik comparte fotos en redes con tu permiso</div><button class="addon-btn" onclick="addToCart('Autorización de fotos en redes',0)">+ Autorizar</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec-dark">
+    <div class="wrap">
+      <div class="sec-head"><span class="stag reveal">¿Para qué sirve?</span><h2 class="sttl reveal">Cualquier evento.<br><span style="color:var(--acc)">Cualquier espacio.</span></h2></div>
+      <div class="use-grid">
+        <div class="use-card reveal d1 tc-only" style="display:none"><div class="use-icon-wrap">📊</div><div class="use-title">Pitch comercial</div><div class="use-desc">Cierra el trato con proyección profesional</div></div>
+        <div class="use-card reveal d1 tc-only" style="display:none"><div class="use-icon-wrap">🏢</div><div class="use-title">Capacitación</div><div class="use-desc">Todo el equipo enfocado y claro</div></div>
+        <div class="use-card reveal d2 tc-only" style="display:none"><div class="use-icon-wrap">🏠</div><div class="use-title">Inmobiliaria</div><div class="use-desc">Proyectos a escala impresionante</div></div>
+        <div class="use-card reveal d2 tc-only" style="display:none"><div class="use-icon-wrap">🚀</div><div class="use-title">Lanzamiento</div><div class="use-desc">Impacto visual desde el primer segundo</div></div>
+        <div class="use-card reveal d3 tc-only" style="display:none"><div class="use-icon-wrap">📋</div><div class="use-title">Workshop</div><div class="use-desc">Material claro para todos</div></div>
+        <div class="use-card reveal d3 tc-only" style="display:none"><div class="use-icon-wrap">🤝</div><div class="use-title">Junta de equipo</div><div class="use-desc">Sin pelear con pantallas chicas</div></div>
+        <div class="use-card reveal d1 tf-only" style="display:none"><div class="use-icon-wrap">🎬</div><div class="use-title">Cine en jardín</div><div class="use-desc">Noche al aire libre con pantalla grande</div></div>
+        <div class="use-card reveal d1 tf-only" style="display:none"><div class="use-icon-wrap">🎂</div><div class="use-title">Cumpleaños</div><div class="use-desc">Sorpresa que nadie olvida</div></div>
+        <div class="use-card reveal d2 tf-only" style="display:none"><div class="use-icon-wrap">🎤</div><div class="use-title">Karaoke</div><div class="use-desc">Micrófonos y pantalla listos</div></div>
+        <div class="use-card reveal d2 tf-only" style="display:none"><div class="use-icon-wrap">🌙</div><div class="use-title">Noche de películas</div><div class="use-desc">Netflix a 100" en tu sala</div></div>
+        <div class="use-card reveal d3 tf-only" style="display:none"><div class="use-icon-wrap">🌿</div><div class="use-title">Terraza o patio</div><div class="use-desc">Exterior con instalación incluida</div></div>
+        <div class="use-card reveal d3 tf-only" style="display:none"><div class="use-icon-wrap">🏠</div><div class="use-title">Cine en casa</div><div class="use-desc">Sin salir ni comprar equipo</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="portafolio" class="sec sec-mid">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="stag reveal">Galería</span><h2 class="sttl reveal">Setups reales.<br>Eventos reales.</h2>
+        <p class="ssub reveal">Próximamente: fotos de nuestros eventos en Mérida.</p>
+        <div class="gallery-tabs">
+          <button class="gtab on" onclick="filterGallery('all',this)">Todos</button>
+          <button class="gtab" onclick="filterGallery('corp',this)">Executive</button>
+          <button class="gtab" onclick="filterGallery('fam',this)">Experience</button>
+        </div>
+      </div>
+      <div class="gallery-grid" id="gallery-grid">
+        <div class="gcard" data-cat="fam"><div class="gcard-placeholder"><div class="gcard-ph-frame"></div><span class="gcard-ph-label">cine-jardin.jpg</span></div><div class="gcard-overlay"><div class="gcard-caption">Cine al aire libre · Jardín privado</div></div></div>
+        <div class="gcard" data-cat="corp"><div class="gcard-placeholder"><div class="gcard-ph-frame"></div><span class="gcard-ph-label">setup-executive.jpg</span></div><div class="gcard-overlay"><div class="gcard-caption">Presentación ejecutiva · Sala de juntas</div></div></div>
+        <div class="gcard" data-cat="fam"><div class="gcard-placeholder"><div class="gcard-ph-frame"></div><span class="gcard-ph-label">karaoke-noche.jpg</span></div><div class="gcard-overlay"><div class="gcard-caption">Karaoke · Reunión privada</div></div></div>
+        <div class="gcard" data-cat="corp"><div class="gcard-placeholder"><div class="gcard-ph-frame"></div><span class="gcard-ph-label">lanzamiento-producto.jpg</span></div><div class="gcard-overlay"><div class="gcard-caption">Lanzamiento · Centro de negocios</div></div></div>
+        <div class="gcard" data-cat="fam"><div class="gcard-placeholder"><div class="gcard-ph-frame"></div><span class="gcard-ph-label">cumpleanos-cine.jpg</span></div><div class="gcard-overlay"><div class="gcard-caption">Cumpleaños · Experiencia privada</div></div></div>
+        <div class="gcard" data-cat="corp"><div class="gcard-placeholder"><div class="gcard-ph-frame"></div><span class="gcard-ph-label">workshop-capacitacion.jpg</span></div><div class="gcard-overlay"><div class="gcard-caption">Workshop · Capacitación empresarial</div></div></div>
+      </div>
+      <div class="gallery-note"><p>Pronto: fotos reales de nuestros eventos. ¿Fuiste cliente? <a href="#resenas" style="color:var(--acc)">Déjanos tu reseña →</a></p></div>
+    </div>
+  </div>
+
+  <div class="sec sec-dark">
+    <div class="wrap">
+      <div class="sec-head"><span class="stag reveal">Por qué Lumik</span><h2 class="sttl reveal">Confianza desde<br><span style="color:var(--acc)">el primer mensaje.</span></h2></div>
+      <div class="trust-grid">
+        <div class="trust-item reveal d1"><span class="trust-icon">📍</span><div class="trust-body"><div class="trust-title">Mérida, Yucatán</div><div class="trust-desc">Local. Conocemos la ciudad y llegamos a tiempo.</div></div></div>
+        <div class="trust-item reveal d1"><span class="trust-icon">🔧</span><div class="trust-body"><div class="trust-title">Instalación incluida</div><div class="trust-desc">Montamos, probamos y nos vamos cuando todo funciona.</div></div></div>
+        <div class="trust-item reveal d2"><span class="trust-icon">✓</span><div class="trust-body"><div class="trust-title">Equipo probado antes</div><div class="trust-desc">Revisión el día anterior. Sin fallas de último momento.</div></div></div>
+        <div class="trust-item reveal d2"><span class="trust-icon">💬</span><div class="trust-body"><div class="trust-title">Atención directa</div><div class="trust-desc">Hablas con quien lleva tu equipo. Sin bots.</div></div></div>
+        <div class="trust-item reveal d3"><span class="trust-icon">📋</span><div class="trust-body"><div class="trust-title">Sin sorpresas</div><div class="trust-desc">Precio y condiciones claros desde el primer mensaje.</div></div></div>
+        <div class="trust-item reveal d3"><span class="trust-icon">⚡</span><div class="trust-body"><div class="trust-title">Respuesta en 2 horas</div><div class="trust-desc">Confirmamos disponibilidad rápido. Tu fecha no espera.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="resenas" class="sec sec-mid">
+    <div class="wrap">
+      <div class="sec-head"><span class="stag reveal">Reseñas</span><h2 class="sttl reveal">Lo que dicen<br>nuestros clientes</h2></div>
+      <div class="reviews-grid" id="reviews-container">
+        <div class="rv reveal d1">
+          <div class="rv-stars">★★★★★</div>
+          <div class="rv-text">"Contratamos Lumik para la presentación de un proyecto inmobiliario. El proyector se veía increíble y la instalación fue puntual. Nuestros clientes quedaron impresionados."</div>
+          <div class="rv-author"><div class="rv-avatar">M</div><div><div class="rv-name">Miguel A.</div><div class="rv-event">Presentación inmobiliaria · Mérida Norte</div></div></div>
+        </div>
+        <div class="rv reveal d2">
+          <div class="rv-stars">★★★★★</div>
+          <div class="rv-text">"La noche de cine en el jardín fue un éxito total. Todo llegó a tiempo, la pantalla se veía perfecta y los niños quedaron alucinados."</div>
+          <div class="rv-author"><div class="rv-avatar" style="background:#e8a020">S</div><div><div class="rv-name">Sofía R.</div><div class="rv-event">Cine en jardín · Altabrisa</div></div></div>
+        </div>
+        <div class="rv reveal d3">
+          <div class="rv-stars">★★★★★</div>
+          <div class="rv-text">"Lo usamos para una capacitación de 20 personas. El equipo funcionó perfecto todo el día. Lo volvemos a rentar sin duda."</div>
+          <div class="rv-author"><div class="rv-avatar" style="background:#3b8beb">R</div><div><div class="rv-name">Roberto C.</div><div class="rv-event">Capacitación corporativa</div></div></div>
+        </div>
+      </div>
+      <div class="rv-form-wrap reveal">
+        <div id="rv-success"></div>
+        <div id="rv-form-inner">
+          <div class="rv-form-title">Deja tu reseña</div>
+          <div class="rv-form-sub">¿Ya usaste Lumik? Cuéntanos. Nos ayuda a mejorar.</div>
+          <div class="star-picker">
+            <button class="star-btn" data-v="1" onclick="setStar(1)">★</button>
+            <button class="star-btn" data-v="2" onclick="setStar(2)">★</button>
+            <button class="star-btn" data-v="3" onclick="setStar(3)">★</button>
+            <button class="star-btn" data-v="4" onclick="setStar(4)">★</button>
+            <button class="star-btn" data-v="5" onclick="setStar(5)">★</button>
+          </div>
+          <div class="rv-form-grid">
+            <div class="rv-fg"><label>Nombre</label><input type="text" id="rv-name" placeholder="Tu nombre" autocomplete="name"/></div>
+            <div class="rv-fg"><label>Tipo de evento</label>
+              <select id="rv-type"><option value="">Selecciona...</option><option>Presentación ejecutiva</option><option>Cine en casa / jardín</option><option>Cumpleaños</option><option>Capacitación</option><option>Lanzamiento</option><option>Otro</option></select>
+            </div>
+            <div class="rv-fg full"><label>Tu reseña</label><textarea id="rv-text" placeholder="¿Cómo fue tu experiencia?"></textarea></div>
+          </div>
+          <button class="rv-submit" onclick="submitReview()">Publicar reseña →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec-dark">
+    <div class="wrap">
+      <div class="sec-head"><span class="stag reveal">Sin letra chica</span><h2 class="sttl reveal">Todo claro<br>desde el inicio.</h2></div>
+      <div class="cond-grid">
+        <div class="cond-card reveal d1"><div class="cond-icon">💰</div><div class="cond-title">50% al confirmar</div><div class="cond-txt">El saldo restante el día del evento. Depósito reembolsable con más de 72 hrs de anticipación.</div></div>
+        <div class="cond-card reveal d1"><div class="cond-icon">🔧</div><div class="cond-title">Instalación incluida</div><div class="cond-txt">Montamos, probamos y retiramos. Necesitamos acceso al lugar en el horario acordado.</div></div>
+        <div class="cond-card reveal d2"><div class="cond-icon">🛡️</div><div class="cond-title">Equipo bajo tu cargo</div><div class="cond-txt">Durante la renta, el equipo está a tu responsabilidad. Daños por mal uso = reposición documentada.</div></div>
+        <div class="cond-card reveal d2"><div class="cond-icon">🌧️</div><div class="cond-title">Fuerza mayor</div><div class="cond-txt">Si llueve fuerte en exteriores, reagendamos sin penalización.</div></div>
+        <div class="cond-card reveal d3"><div class="cond-icon">❌</div><div class="cond-title">Cancelaciones</div><div class="cond-txt">+72 hrs: 100%. 24–72 hrs: 50%. Menos de 24 hrs: sin reembolso.</div></div>
+        <div class="cond-card reveal d3"><div class="cond-icon">⏱️</div><div class="cond-title">Extensión de cobertura</div><div class="cond-txt">$500/hr adicional. Solicitar con al menos 1 hr de anticipación.</div></div>
+      </div>
+      <div style="margin-top:1.8rem;text-align:center">
+        <button onclick="openModal('terms-modal')" style="background:none;border:1px solid var(--g120);color:var(--g400);padding:.45rem 1.1rem;border-radius:var(--r-pill);font-size:.76rem;cursor:pointer;transition:all var(--t)" onmouseover="this.style.borderColor='rgba(255,255,255,.3)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,.12)';this.style.color='rgba(255,255,255,.4)'">Leer condiciones completas →</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="reservar" class="sec sec-mid">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:2.2rem">
+        <span class="stag reveal" style="display:block;text-align:center">Reservar</span>
+        <h2 class="sttl reveal" style="text-align:center">Reserva tu fecha</h2>
+        <p class="ssub reveal" style="margin:0 auto;text-align:center;max-width:420px">Completa el formulario y te confirmamos en menos de 2 horas.</p>
+      </div>
+      <div class="form-shell reveal">
+        <div id="form-success"><div class="big-ico">📲</div><h3>¡Solicitud enviada!</h3><p>Abriendo WhatsApp con tu resumen. Te confirmamos disponibilidad en breve.</p></div>
+        <form id="reserva-form">
+          <div id="cart-summary-section" style="display:none">
+            <div class="cart-summary-box">
+              <div class="csb-title">Tu selección actual</div>
+              <div class="csb-items" id="csb-items-list"></div>
+              <div class="csb-total"><span>Total estimado</span><span class="csb-total-amt" id="csb-total-amt">$0</span></div>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="fg"><label>Nombre completo</label><input type="text" id="f-name" placeholder="Tu nombre" required autocomplete="name"/></div>
+            <div class="fg"><label>Teléfono / WhatsApp</label><input type="tel" id="f-phone" placeholder="999 000 0000" required autocomplete="tel"/></div>
+            <div class="fg"><label>Correo electrónico</label><input type="email" id="f-email" placeholder="tu@correo.com" autocomplete="email"/></div>
+            <div class="fg"><label>Fecha del evento</label><input type="date" id="f-date" required/></div>
+            <div class="fg full">
+              <label>Tipo de evento</label>
+              <div class="chips-row">
+                <span class="chip" onclick="toggleChip(this)">Presentación</span>
+                <span class="chip" onclick="toggleChip(this)">Capacitación</span>
+                <span class="chip" onclick="toggleChip(this)">Lanzamiento</span>
+                <span class="chip" onclick="toggleChip(this)">Cine en casa</span>
+                <span class="chip" onclick="toggleChip(this)">Cine al aire libre</span>
+                <span class="chip" onclick="toggleChip(this)">Cumpleaños</span>
+                <span class="chip" onclick="toggleChip(this)">Karaoke</span>
+                <span class="chip" onclick="toggleChip(this)">Otro</span>
+              </div>
+            </div>
+            <div class="fg full"><label>Dirección o zona del evento</label><input type="text" id="f-address" placeholder="Colonia o referencia en Mérida"/></div>
+            <div class="fg full"><label>Notas</label><textarea id="f-notes" placeholder="Horario, número de personas, requerimientos especiales..."></textarea></div>
+          </div>
+          <button type="button" class="sub-btn" onclick="submitForm()">Enviar solicitud por WhatsApp →</button>
+          <div class="lead-status" id="lead-status"></div>
+          <p class="form-fn">Al enviar aceptas nuestras <a href="#" onclick="openModal('terms-modal');return false" style="color:var(--acc)">condiciones</a> y <a href="#" onclick="openModal('privacy-modal');return false" style="color:var(--acc)">aviso de privacidad</a>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec-dark">
+    <div class="wrap" style="text-align:center">
+      <span class="stag reveal" style="display:block;text-align:center">Contacto</span>
+      <h2 class="sttl reveal" style="text-align:center">Hablemos directo</h2>
+      <p class="ssub reveal" style="margin:0 auto;text-align:center">WhatsApp es lo más rápido. Respondemos en menos de 2 horas.</p>
+      <div class="contact-row">
+        <a class="ci" href="https://wa.me/529992171955" target="_blank" onclick="trackWA('contact')"><span class="ico">💬</span> (999) 217-1955</a>
+        <a class="ci" href="mailto:info@lumik.mx"><span class="ico">✉</span> info@lumik.mx</a>
+        <a class="ci" href="https://instagram.com/lumik.mx" target="_blank"><span class="ico">◻</span> @lumik.mx</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="final-cta">
+    <h2 class="final-cta-q reveal">¿Tienes fecha y lugar?</h2>
+    <p class="final-cta-sub reveal">Te digo en minutos si tenemos disponibilidad y qué equipo va mejor para tu espacio.</p>
+    <a href="https://wa.me/529992171955?text=Hola%2C+quiero+cotizar+Lumik+para+un+evento.+Fecha%3A+____.+Tipo%3A+____.+Zona%3A+____." target="_blank" class="wa-btn-lg reveal" onclick="trackWA('final-cta')">Cotizar por WhatsApp →</a>
+  </div>
+
+  <footer>
+    <div class="footer-brand">
+      <svg class="footer-logo-svg"><use href="#lumik-logo"/></svg>
+      <span class="footer-wm">lumik</span>
+    </div>
+    <div class="footer-slogan">Proyecta momentos que importan · Mérida, Yucatán</div>
+    <div class="footer-links">
+      <a href="#equipo">Equipo</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#portafolio">Galería</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#reservar">Reservar</a>
+      <a href="#paquetes">Executive</a>
+      <a href="#paquetes">Experience</a>
+      <a href="#" onclick="openModal('privacy-modal');return false">Privacidad</a>
+      <a href="#" onclick="openModal('terms-modal');return false">Condiciones</a>
+    </div>
+    <p class="footer-copy">© 2025 Lumik · Todos los derechos reservados · info@lumik.mx</p>
+  </footer>
+
+</div>
+
+<!-- CAMBIO 1: goWA('Cotizar') en lugar de goWA('sticky') — APLICADO -->
+<button class="wa-sticky" id="wa-sticky" onclick="goWA('Cotizar'); trackWA('sticky')">
+  💬 Cotizar
+</button>
+
+<script>
+let cart = [], reviewStars = 0;
+const WA_NUM = '529992171955';
+
+function fbTrack(event, data) {
+  try { if(typeof fbq === 'function') fbq('track', event, data || {}); } catch(e){}
+}
+function trackWA(source) {
+  fbTrack('Contact', { content_name: 'WhatsApp', source: source });
+  fbTrack('Lead', { content_name: source });
+}
+function trackViewContent(name) {
+  fbTrack('ViewContent', { content_name: name });
+}
+
+function goWA(msg) {
+  const text = msg === 'Cotizar'
+    ? 'Hola%2C+quiero+cotizar+Lumik+para+un+evento.'
+    : encodeURIComponent(msg);
+  window.open('https://wa.me/' + WA_NUM + '?text=' + text, '_blank');
+}
+
+function setTheme(t) {
+  const body = document.body;
+  body.classList.remove('tf','tc');
+  body.classList.add(t==='f' ? 'tf' : 'tc');
+  const show = t === 'f' ? 'tf' : 'tc';
+  const hide = t === 'f' ? 'tc' : 'tf';
+  document.querySelectorAll('.'+show+'-only').forEach(el => el.style.display='block');
+  document.querySelectorAll('.'+hide+'-only').forEach(el => el.style.display='none');
+  document.querySelectorAll('.'+show+'-flex').forEach(el => el.style.display='flex');
+  document.querySelectorAll('.'+hide+'-flex').forEach(el => el.style.display='none');
+  document.querySelectorAll('.'+show+'-grid').forEach(el => el.style.display='grid');
+  document.querySelectorAll('.'+hide+'-grid').forEach(el => el.style.display='none');
+  const hero = document.getElementById('hero');
+  hero.style.background = t === 'f' ? 'var(--xp-bg)' : 'var(--ex-bg)';
+  document.getElementById('intro').classList.add('out');
+  const main = document.getElementById('main');
+  main.style.visibility = 'visible';
+  main.style.opacity = '0';
+  requestAnimationFrame(() => { main.style.transition = 'opacity .65s'; main.style.opacity = '1'; });
+  window.scrollTo(0,0);
+  trackViewContent(t === 'f' ? 'Experience' : 'Executive');
+}
+
+function backToIntro() {
+  document.getElementById('intro').classList.remove('out');
+  const main = document.getElementById('main');
+  main.style.opacity = '0';
+  setTimeout(() => { main.style.visibility = 'hidden'; }, 650);
+  window.scrollTo(0,0);
+}
+
+function addToCart(name, price) {
+  cart.push({ name, price, id: Date.now() });
+  renderCart(); openCart(); bumpCount(); syncCartToForm();
+}
+function removeFromCart(id) {
+  cart = cart.filter(i => i.id !== id);
+  renderCart(); syncCartToForm();
+}
+function renderCart() {
+  const el = document.getElementById('cart-items');
+  const countEl = document.getElementById('cart-count');
+  const totalEl = document.getElementById('cart-total-display');
+  if (cart.length === 0) {
+    el.innerHTML = '<div class="cart-empty">Aún no has agregado nada.<br>Elige un paquete o adicional.</div>';
+  } else {
+    el.innerHTML = cart.map(i => `<div class="cart-item"><div class="ci-info"><div class="ci-name">${i.name}</div><div class="ci-price">${i.price > 0 ? '$'+i.price.toLocaleString('es-MX') : 'Sin costo'}</div></div><button class="ci-remove" onclick="removeFromCart(${i.id})">×</button></div>`).join('');
+  }
+  const total = cart.reduce((s,i) => s+i.price, 0);
+  countEl.textContent = cart.length;
+  totalEl.textContent = '$'+total.toLocaleString('es-MX');
+}
+function openCart()  { document.getElementById('cart-drawer').classList.add('open');    document.getElementById('cart-overlay').classList.add('on'); }
+function closeCart() { document.getElementById('cart-drawer').classList.remove('open'); document.getElementById('cart-overlay').classList.remove('on'); }
+function toggleCart(){ document.getElementById('cart-drawer').classList.contains('open') ? closeCart() : openCart(); }
+function bumpCount() { const c = document.getElementById('cart-count'); c.classList.add('bump'); setTimeout(()=>c.classList.remove('bump'),230); }
+function goToCheckout() { closeCart(); document.getElementById('reservar').scrollIntoView({ behavior:'smooth' }); syncCartToForm(); }
+function syncCartToForm() {
+  const sec  = document.getElementById('cart-summary-section');
+  const list = document.getElementById('csb-items-list');
+  const tot  = document.getElementById('csb-total-amt');
+  if (!sec) return;
+  if (cart.length === 0) { sec.style.display='none'; return; }
+  sec.style.display = 'block';
+  list.innerHTML = cart.map(i => `<div class="csb-item"><span>${i.name}</span><span class="price">${i.price>0?'$'+i.price.toLocaleString('es-MX'):'Sin costo'}</span></div>`).join('');
+  tot.textContent = '$'+cart.reduce((s,i)=>s+i.price,0).toLocaleString('es-MX');
+}
+
+function quickReserve(label) {
+  trackWA('package-' + label);
+  const msg = `Hola, quiero cotizar Lumik. Me interesa: ${label}. ¿Tienen disponibilidad?`;
+  window.open('https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(msg),'_blank');
+}
+
+const LEAD_ENDPOINT = '';
+async function saveLead(data) {
+  if (!LEAD_ENDPOINT) return;
+  try {
+    await fetch(LEAD_ENDPOINT, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) });
+    const st = document.getElementById('lead-status');
+    if (st) { st.textContent = 'Solicitud guardada ✓'; st.className = 'lead-status ok'; }
+  } catch(e) { console.warn('Lead no guardado:', e); }
+}
+
+function submitForm() {
+  const name    = document.getElementById('f-name').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const date    = document.getElementById('f-date').value;
+  const address = document.getElementById('f-address').value.trim();
+  const notes   = document.getElementById('f-notes').value.trim();
+  const chips   = [...document.querySelectorAll('.chip.on')].map(c=>c.textContent).join(', ');
+  if (!name || !phone) { alert('Por favor completa tu nombre y teléfono.'); return; }
+  saveLead({ name, phone, email, date, eventType: chips, address, notes, cartItems: cart.map(i=>i.name).join(', '), total: cart.reduce((s,i)=>s+i.price,0), timestamp: new Date().toISOString() });
+  fbTrack('Lead', { content_name:'form_submit', value: cart.reduce((s,i)=>s+i.price,0), currency:'MXN' });
+  const cartSummary = cart.length > 0
+    ? '\n\nSelección:\n' + cart.map(i=>`- ${i.name}: $${i.price.toLocaleString('es-MX')}`).join('\n') + '\nTotal est.: $'+cart.reduce((s,i)=>s+i.price,0).toLocaleString('es-MX')
+    : '';
+  const msg = `Hola, quiero reservar con Lumik.\nNombre: ${name}\nTeléfono: ${phone}\nFecha: ${date || 'Por definir'}\nTipo: ${chips || 'Por definir'}\nDirección: ${address || 'Por definir'}${notes ? '\nNotas: '+notes : ''}${cartSummary}`;
+  document.getElementById('form-success').style.display = 'block';
+  document.getElementById('reserva-form').style.display = 'none';
+  setTimeout(() => { window.open('https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(msg),'_blank'); }, 500);
+}
+
+function toggleChip(el) { el.classList.toggle('on'); }
+
+function filterGallery(cat, btn) {
+  document.querySelectorAll('.gtab').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.gcard').forEach(c=>{ c.style.display = (cat==='all' || c.dataset.cat===cat) ? 'block' : 'none'; });
+}
+
+function openModal(id)  { document.getElementById(id).classList.add('on');    document.body.style.overflow='hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('on'); document.body.style.overflow=''; }
+document.querySelectorAll('.modal-bg').forEach(m => { m.addEventListener('click', e => { if(e.target===m) closeModal(m.id); }); });
+
+function setStar(v) {
+  reviewStars = v;
+  document.querySelectorAll('.star-btn').forEach(b=>{ b.classList.toggle('lit', parseInt(b.dataset.v) <= v); });
+}
+function submitReview() {
+  const name = document.getElementById('rv-name').value.trim();
+  const text = document.getElementById('rv-text').value.trim();
+  const type = document.getElementById('rv-type').value;
+  if (!name||!text) { alert('Por favor escribe tu nombre y reseña.'); return; }
+  const stars = '★'.repeat(reviewStars||5)+'☆'.repeat(5-(reviewStars||5));
+  const container = document.getElementById('reviews-container');
+  const card = document.createElement('div');
+  card.className = 'rv reveal on';
+  card.innerHTML = `<div class="rv-stars">${stars}</div><div class="rv-text">"${text}"</div><div class="rv-author"><div class="rv-avatar">${name[0].toUpperCase()}</div><div><div class="rv-name">${name}</div><div class="rv-event">${type||'Evento en Mérida'}</div></div></div>`;
+  container.insertBefore(card, container.firstChild);
+  document.getElementById('rv-form-inner').style.display='none';
+  const s = document.getElementById('rv-success');
+  s.style.display='block';
+  s.innerHTML='<div style="font-size:1.5rem;margin-bottom:.5rem">★</div><div style="font-weight:700;margin-bottom:.3rem">¡Gracias por tu reseña!</div><div style="font-size:.82rem;color:rgba(255,255,255,.4)">La compartiremos pronto.</div>';
+}
+
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); revObs.unobserve(e.target); }});
+}, { threshold:0.10 });
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+const waSticky = document.getElementById('wa-sticky');
+window.addEventListener('scroll', () => {
+  if(waSticky) waSticky.style.opacity = window.scrollY > 280 ? '1' : '0';
+}, { passive:true });
+
+renderCart();
+</script>
+</body>
+</html>
